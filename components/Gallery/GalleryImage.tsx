@@ -13,11 +13,11 @@ export const GalleryImage: React.FC<GalleryImageProps> = ({
 }) => {
   return (
     <div className="relative group aspect-square rounded-[32px] overflow-hidden bg-zinc-950 border border-white/5 shadow-2xl cursor-pointer">
-      {/* Real Image with Grayscale to color transition */}
+      {/* Imagem com cores reais desde o início */}
       <img
         src={src}
         alt={label}
-        className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
+        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         loading="lazy"
       />
 

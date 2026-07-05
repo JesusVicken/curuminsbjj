@@ -7,24 +7,24 @@ import { FadeIn } from "@/components/Animations";
 export const FAQ: React.FC = () => {
   const faqs = [
     {
-      question: "Com qual idade meu filho pode começar a treinar?",
+      question: "Com qual idade a criança pode começar a treinar no projeto?",
       answer:
-        "Nossa turma baby aceita pequenos a partir dos 3 anos de idade completados. As turmas são divididas em Baby (3-5 anos), Kids (6-9 anos) e Teens (10-15 anos), respeitando a maturidade física e cognitiva de cada faixa etária.",
+        "Atendemos crianças e adolescentes de 3 a 15 anos de idade que residem na aldeia. Nossos treinos são adaptados e divididos em categorias para respeitar a maturidade física e cognitiva de cada faixa etária.",
     },
     {
-      question: "O Jiu-Jitsu estimula a agressividade na criança?",
+      question: "O Jiu-Jitsu estimula a agressividade?",
       answer:
-        "Não! Pelo contrário. O Jiu-Jitsu ensina disciplina, autocontrole e respeito. Nossos alunos aprendem desde o primeiro dia que a técnica só deve ser utilizada no tatame ou para autodefesa em último caso. O gasto de energia ajuda a tranquilizar a criança.",
+        "Não. O Jiu-Jitsu atua ensinando respeito, disciplina e autocontrole. Nossos alunos aprendem desde o primeiro dia que a técnica só deve ser utilizada no tatame ou para autodefesa. O gasto de energia saudável contribui para que fiquem mais calmos e focados.",
     },
     {
-      question: "Meu filho precisa ter kimono para fazer a aula experimental?",
+      question: "A criança precisa comprar kimono para treinar?",
       answer:
-        "Não é necessário. Para a primeira aula experimental, basta que a criança vista uma roupa confortável que facilite a movimentação, como calça de moletom ou legging e uma camiseta de malha. Nós providenciaremos um kimono se disponível.",
+        "Não. Sendo um projeto social voluntário, nós fornecemos os kimonos gratuitamente conforme as doações são recebidas. Para os primeiros treinos, basta que a criança vista roupas confortáveis que facilitem a movimentação.",
     },
     {
       question: "Como funciona o sistema de graduações das crianças?",
       answer:
-        "Seguimos rigorosamente o sistema de faixas oficial da CBJJ/IBJJF para a categoria infantil. A graduação avalia tanto a assiduidade e progresso técnico do aluno no tatame, quanto o comportamento exemplar demonstrado em casa e no colégio.",
+        "Seguimos as diretrizes oficiais de graduação infantil. Avaliamos tanto o compromisso técnico do aluno no tatame quanto o seu comportamento exemplar demonstrado com a família e nos estudos escolares.",
     },
   ];
 
@@ -36,14 +36,14 @@ export const FAQ: React.FC = () => {
         <div className="mx-auto max-w-3xl text-center mb-20">
           <FadeIn direction="up">
             <span className="text-xs font-bold tracking-widest text-gold-accent uppercase">
-              Suporte & Dúvidas
+              Dúvidas Frequentes
             </span>
             <h2 className="mt-6 font-display text-3xl font-extrabold tracking-tight text-white sm:text-5xl leading-[0.95] uppercase">
-              Tudo o que você precisa saber antes de matricular seu filho
+              Perguntas sobre o projeto social
             </h2>
             <p className="mt-4 text-base text-zinc-400 max-w-2xl mx-auto font-light">
-              Reunimos as principais perguntas dos pais. Se ainda tiver alguma dúvida, entre em contato
-              diretamente com nossa equipe de suporte.
+              Reunimos as principais dúvidas sobre as atividades e apoios na aldeia. Se ainda tiver alguma pergunta, 
+              entre em contato direto com a nossa coordenação.
             </p>
           </FadeIn>
         </div>

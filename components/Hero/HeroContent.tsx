@@ -96,7 +96,7 @@ export const HeroContent: React.FC = () => {
             onMouseLeave={() => handleMouseLeave(primaryBtnRef)}
             onClick={() => (window.location.href = "#contact")}
           >
-            Agendar Aula Grátis
+            Como Ajudar
           </Button>
         </div>
         <div className="w-full sm:w-auto">
