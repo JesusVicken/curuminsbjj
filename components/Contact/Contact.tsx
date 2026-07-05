@@ -1,23 +1,31 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { ContactForm } from "./ContactForm";
 import { Icons } from "@/components/Icons";
 import { FadeIn } from "@/components/Animations";
 
 export const Contact: React.FC = () => {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyPix = () => {
+    navigator.clipboard.writeText("projetocuruminsbjj@gmail.com");
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   const contactDetails = [
     {
       icon: Icons.Phone,
       title: "WhatsApp Coordenador",
-      value: "+55 (11) 99999-9999 (Daniel BJJ)",
-      href: "https://wa.me/5511999999999",
+      value: "+55 (61) 99999-9999 (Daniel BJJ)",
+      href: "https://wa.me/5561999999999",
     },
     {
       icon: Icons.Mail,
       title: "E-mail Oficial",
-      value: "contato@curuminsbjj.com.br",
-      href: "mailto:contato@curuminsbjj.com.br",
+      value: "projetocuruminsbjj@gmail.com",
+      href: "mailto:projetocuruminsbjj@gmail.com",
     },
     {
       icon: Icons.MapPin,
@@ -51,10 +59,35 @@ export const Contact: React.FC = () => {
           
           {/* Contact Details Column */}
           <div className="lg:col-span-5 flex flex-col gap-6">
+            
+            {/* Prominent Golden Pix Card */}
+            <FadeIn direction="right" delay={0}>
+              <div
+                onClick={handleCopyPix}
+                className="flex gap-4 p-6 rounded-3xl bg-gold-accent/5 border border-gold-accent/20 shadow-2xl cursor-pointer hover:bg-gold-accent/10 hover:border-gold-accent/45 transition-all duration-300 group"
+              >
+                <div className="h-10 w-10 rounded-2xl bg-gold-accent/10 border border-gold-accent/20 flex items-center justify-center text-gold-accent flex-shrink-0">
+                  <Icons.Award className="h-5 w-5" />
+                </div>
+                <div className="flex-grow">
+                  <h3 className="text-[10px] font-bold text-gold-accent uppercase tracking-widest">
+                    Chave Pix (E-mail)
+                  </h3>
+                  <p className="text-sm font-semibold text-white mt-1.5 break-all">
+                    projetocuruminsbjj@gmail.com
+                  </p>
+                  <p className="text-[9px] text-zinc-500 uppercase font-bold tracking-wider mt-1 group-hover:text-gold-accent transition-colors">
+                    {copied ? "Copiado com sucesso!" : "Clique para copiar a chave Pix"}
+                  </p>
+                </div>
+              </div>
+            </FadeIn>
+
+            {/* Other Contact Cards */}
             {contactDetails.map((detail, idx) => {
               const Icon = detail.icon;
               return (
-                <FadeIn key={detail.title} direction="right" delay={0.1 * idx}>
+                <FadeIn key={detail.title} direction="right" delay={0.1 * (idx + 1)}>
                   <div className="flex gap-4 p-6 rounded-3xl bg-zinc-900/10 border border-white/5 shadow-2xl">
                     <div className="h-10 w-10 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-gold-accent flex-shrink-0">
                       <Icon className="h-5 w-5" />
