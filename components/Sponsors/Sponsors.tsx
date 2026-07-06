@@ -14,9 +14,16 @@ export const Sponsors: React.FC = () => {
   };
 
   return (
-    <section id="sponsors" className="py-24 bg-zinc-950/40 border-y border-white/5 relative overflow-hidden">
+    <section id="sponsors" className="relative py-24 bg-zinc-950 border-y border-white/5 overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-25 grayscale"
+        style={{ backgroundImage: "url('/image6.jpg')" }}
+      />
+      <div className="absolute inset-0 z-0 bg-gradient-to-b from-zinc-950 via-zinc-950/90 to-zinc-950/80" />
+
       {/* Decorative gradient background */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gold-accent/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gold-accent/10 rounded-full blur-3xl pointer-events-none z-0" />
 
       <div className="relative z-10 mx-auto max-w-5xl px-6 lg:px-8 text-center">
         <FadeIn direction="up">

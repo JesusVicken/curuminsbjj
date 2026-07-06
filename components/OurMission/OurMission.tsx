@@ -5,9 +5,16 @@ import { FadeIn } from "@/components/Animations";
 
 export const OurMission: React.FC = () => {
   return (
-    <section id="mission" className="relative py-32 md:py-40 bg-zinc-950/60 overflow-hidden border-y border-white/5">
+    <section id="mission" className="relative py-32 md:py-40 bg-zinc-950 overflow-hidden border-y border-white/5">
+      {/* Background Image with Fixed Attachment for Parallax */}
+      <div 
+        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-fixed opacity-30 grayscale-[50%]"
+        style={{ backgroundImage: "url('/estrutrura.webp')" }}
+      />
+      <div className="absolute inset-0 z-0 bg-zinc-950/80" />
+
       {/* Decorative Radial Lighting */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[600px] bg-[radial-gradient(ellipse_at_center,rgba(212,175,55,0.03),transparent_70%)] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[600px] bg-[radial-gradient(ellipse_at_center,rgba(212,175,55,0.08),transparent_70%)] pointer-events-none z-0" />
 
       <div className="relative z-10 mx-auto max-w-5xl px-6 lg:px-8 text-center">
         <FadeIn direction="up">
