@@ -14,13 +14,6 @@ export const Instructors: React.FC = () => {
       beltColor: "Preta",
       gradient: "from-zinc-900 via-zinc-950 to-red-950/20",
     },
-    {
-      name: "Mestre Renzo Gracie",
-      role: "Faixa Vermelha/Preta 7º Grau • Apoiador Honorário",
-      bio: "Uma das maiores lendas do jiu-jitsu mundial. Visitou a Aldeia Teko Haw em Brasília para ministrar um seminário especial e apoiar o projeto social dos curumins.",
-      beltColor: "Vermelha e Preta",
-      gradient: "from-zinc-900 via-zinc-950 to-gold-950/20",
-    },
   ];
 
   return (
@@ -47,7 +40,7 @@ export const Instructors: React.FC = () => {
         </div>
 
         {/* Instructors Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 gap-12 max-w-2xl mx-auto">
           {team.map((sensei, idx) => (
             <FadeIn key={sensei.name} direction="up" delay={0.15 * idx}>
               <Card hoverEffect className={`relative overflow-hidden bg-gradient-to-br ${sensei.gradient} border-white/5`}>
