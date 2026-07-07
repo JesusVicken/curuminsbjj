@@ -36,7 +36,7 @@ export const About: React.FC = () => {
     <section id="about" className="relative py-32 md:py-48 bg-zinc-950 overflow-hidden">
       {/* Background Image */}
       <div 
-        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-20 grayscale"
+        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-20"
         style={{ backgroundImage: "url('/image5.jpg')" }}
       />
       <div className="absolute inset-0 z-0 bg-gradient-to-t from-zinc-950 via-zinc-950/80 to-zinc-950/90" />
@@ -47,7 +47,7 @@ export const About: React.FC = () => {
           {/* Text Content Area */}
           <div className="lg:col-span-5 flex flex-col justify-center">
             <FadeIn direction="right">
-              <span className="text-xs font-bold tracking-widest text-gold-accent uppercase">
+              <span className="text-xs font-bold tracking-widest text-red-accent uppercase">
                 Quem Somos
               </span>
               <h2 className="mt-6 font-display text-4xl font-extrabold tracking-tight text-white sm:text-5xl leading-[0.95] uppercase">
@@ -66,16 +66,16 @@ export const About: React.FC = () => {
               {/* Stats */}
               <div className="grid grid-cols-2 gap-8 mt-10 border-t border-white/5 pt-10 text-left">
                 <div>
-                  <span className="font-sans text-4xl font-black text-gold-accent tracking-tight">
+                  <span className="font-sans text-4xl font-black text-white tracking-tight">
                     03 Anos
                   </span>
-                  <p className="text-zinc-550 text-[10px] uppercase tracking-wider text-zinc-550 mt-2 font-bold">Na Aldeia Teko Haw</p>
+                  <p className="text-[10px] uppercase tracking-wider text-zinc-500 mt-2 font-bold">Na Aldeia Teko Haw</p>
                 </div>
                 <div>
-                  <span className="font-sans text-4xl font-black text-gold-accent tracking-tight">
+                  <span className="font-sans text-4xl font-black text-white tracking-tight">
                     Zero
                   </span>
-                  <p className="text-zinc-550 text-[10px] uppercase tracking-wider text-zinc-550 mt-2 font-bold">Verba Governamental Fixa</p>
+                  <p className="text-[10px] uppercase tracking-wider text-zinc-500 mt-2 font-bold">Verba Governamental Fixa</p>
                 </div>
               </div>
             </FadeIn>

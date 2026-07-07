@@ -23,13 +23,11 @@ export const Navbar: React.FC = () => {
   }, []);
 
   const navLinks = [
-    { href: "#", label: "Início" },
-    { href: "#about", label: "Sobre" },
-    { href: "#project", label: "O Projeto" },
-    { href: "#press", label: "Imprensa" },
-    { href: "#gallery", label: "Galeria" },
-    { href: "#faq", label: "FAQ" },
-    { href: "#contact", label: "Contato" },
+    { href: "/", label: "Início" },
+    { href: "/sobre", label: "Sobre o Projeto" },
+    { href: "/galeria", label: "Galeria" },
+    { href: "/imprensa-faq", label: "Imprensa & FAQ" },
+    { href: "/apoie", label: "Contato" },
   ];
 
   return (
@@ -62,7 +60,7 @@ export const Navbar: React.FC = () => {
 
           {/* Action Button */}
           <div className="hidden md:block">
-            <Link href="#contact">
+            <Link href="/apoie">
               <Button variant="gold" size="sm">
                 Apoiar Projeto
               </Button>
@@ -94,7 +92,7 @@ export const Navbar: React.FC = () => {
             ))}
           </nav>
           <div className="mt-auto pb-10">
-            <Link href="#contact" onClick={() => setIsOpen(false)}>
+            <Link href="/apoie" onClick={() => setIsOpen(false)}>
               <Button variant="gold" size="lg" className="w-full">
                 Apoiar Projeto
               </Button>

@@ -122,6 +122,9 @@ export const Press: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredArticles.map((art, idx) => {
             const Icon = art.icon;
+            // Use a deterministic placeholder image based on the index to make it look varied
+            const imagePlaceholder = `/imagesprojeto/projeto${(idx % 22) + 1}.jpeg`;
+
             return (
               <FadeIn key={art.link} direction="up" delay={0.08 * idx}>
                 <a
@@ -130,24 +133,36 @@ export const Press: React.FC = () => {
                   rel="noopener noreferrer"
                   className="block h-full group"
                 >
-                  <Card hoverEffect className="flex flex-col justify-between h-full bg-zinc-950/20 border-white/5 p-8 transition-transform duration-500 group-hover:-translate-y-2">
+                  <Card hoverEffect className="flex flex-col justify-between h-full bg-zinc-950/20 border-white/5 p-6 transition-transform duration-500 group-hover:-translate-y-2">
+                    
+                    {/* Placeholder Image */}
+                    <div className="w-full h-48 bg-zinc-900 rounded-xl mb-6 overflow-hidden relative">
+                      <img 
+                        src={imagePlaceholder} 
+                        alt={art.title} 
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-60 group-hover:opacity-100" 
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 to-transparent opacity-80" />
+                      
+                      <div className="absolute top-4 right-4 h-8 w-8 rounded-full bg-zinc-950/80 backdrop-blur border border-white/10 flex items-center justify-center text-zinc-400 group-hover:text-red-accent transition-colors duration-300 z-10">
+                        <Icon className="h-4 w-4" />
+                      </div>
+                    </div>
+
                     <CardHeader className="p-0 border-none pb-0">
                       <div className="flex justify-between items-center w-full">
-                        <span className="text-[10px] font-bold text-gold-accent uppercase tracking-widest">
+                        <span className="text-[10px] font-bold text-red-accent uppercase tracking-widest">
                           {art.source}
                         </span>
-                        <div className="h-8 w-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-zinc-400 group-hover:text-gold-accent group-hover:bg-gold-accent/10 transition-colors duration-300">
-                          <Icon className="h-4 w-4" />
-                        </div>
                       </div>
-                      <CardTitle className="mt-4 text-base font-bold text-white tracking-tight leading-snug group-hover:text-gold-accent transition-colors duration-300">
+                      <CardTitle className="mt-3 text-base font-bold text-white tracking-tight leading-snug group-hover:text-red-accent transition-colors duration-300">
                         {art.title}
                       </CardTitle>
                     </CardHeader>
                     <CardContent className="p-0 mt-4 flex-grow text-xs text-zinc-400 leading-relaxed font-light">
                       {art.description}
                     </CardContent>
-                    <div className="mt-6 flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-zinc-550 group-hover:text-white transition-colors duration-300">
+                    <div className="mt-6 flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-zinc-500 group-hover:text-white transition-colors duration-300">
                       <span>Ver Reportagem</span>
                       <Icons.ArrowRight className="h-3 w-3 translate-x-0 group-hover:translate-x-1 transition-transform" />
                     </div>

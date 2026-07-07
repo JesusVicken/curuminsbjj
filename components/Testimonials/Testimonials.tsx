@@ -8,24 +8,24 @@ export const Testimonials: React.FC = () => {
   const reviews = [
     {
       quote:
-        "O comportamento do Pedro mudou drasticamente em casa e na escola. Ele está muito mais calmo, focado e aprendeu a respeitar os limites que antes ele desafiava. Super recomendo!",
-      author: "Juliana Silva",
-      role: "Mãe",
-      childName: "Pedro (8 anos)",
+        "O jiu-jitsu trouxe uma nova perspectiva para as nossas crianças. Eles estão mais focados, respeitosos e orgulhosos de suas raízes. É muito mais do que esporte, é resgate cultural.",
+      author: "Cacique Raoni",
+      role: "Liderança",
+      childName: "Comunidade Teko Haw",
     },
     {
       quote:
-        "Estávamos preocupados com bullying na escola. No Curumins BJJ, o Arthur aprendeu a se defender e, mais importante, ganhou confiança para impor respeito sem precisar brigar.",
-      author: "Ricardo Souza",
-      role: "Pai",
-      childName: "Arthur (11 anos)",
+        "Antes o tempo ocioso era uma preocupação. Hoje, o tatame é o lugar onde eles mais querem estar. A disciplina e a alegria deles transformaram o clima na aldeia toda.",
+      author: "Maria Guajajara",
+      role: "Mãe",
+      childName: "Kauê (9 anos)",
     },
     {
       quote:
-        "A metodologia lúdica das aulas do baby é incrível! Minha filha de 4 anos adora as dinâmicas e já desenvolveu um equilíbrio e coordenação motora fantásticos.",
-      author: "Mariana Costa",
-      role: "Mãe",
-      childName: "Beatriz (4 anos)",
+        "Eu vi o respeito pelas tradições aumentar. Eles lutam no tatame, mas também lutam pelo orgulho do nosso povo. O projeto é uma bênção para a nossa juventude.",
+      author: "Tainá Pataxó",
+      role: "Professora Local",
+      childName: "Aldeia Teko Haw",
     },
   ];
 
@@ -36,15 +36,15 @@ export const Testimonials: React.FC = () => {
         {/* Section Header */}
         <div className="mx-auto max-w-3xl text-center mb-20">
           <FadeIn direction="up">
-            <span className="text-xs font-bold tracking-widest text-gold-accent uppercase">
-              Depoimentos
+            <span className="text-xs font-bold tracking-widest text-red-accent uppercase">
+              Vozes da Aldeia
             </span>
             <h2 className="mt-6 font-display text-3xl font-extrabold tracking-tight text-white sm:text-5xl leading-[0.95] uppercase">
-              O impacto nas famílias dos nossos pequenos campeões
+              O impacto real na nossa comunidade
             </h2>
             <p className="mt-4 text-base text-zinc-400 max-w-2xl mx-auto font-light">
-              Nossa maior recompensa é ver a transformação das crianças refletida no orgulho e na
-              tranquilidade de suas famílias.
+              Não se trata apenas de formar campeões nos tatames, mas de forjar cidadãos com 
+              orgulho, disciplina e uma base cultural forte.
             </p>
           </FadeIn>
         </div>

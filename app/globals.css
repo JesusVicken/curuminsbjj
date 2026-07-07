@@ -12,18 +12,18 @@
   --font-sans: 'Outfit', sans-serif;
   --font-display: 'Cinzel', serif;
 
-  --color-gold-50: #faf6f0;
-  --color-gold-100: #f3ebdf;
-  --color-gold-200: #e4d2ba;
-  --color-gold-300: #d2b591;
-  --color-gold-400: #bd976a;
-  --color-gold-500: #a57c52;
-  --color-gold-600: #8b623e;
-  --color-gold-700: #704a30;
-  --color-gold-800: #573523;
-  --color-gold-900: #422619;
-  --color-gold-950: #23120b;
-  --color-gold-accent: #d4af37;
+  --color-gold-50: #ffffff;
+  --color-gold-100: #f4f4f5;
+  --color-gold-200: #e4e4e7;
+  --color-gold-300: #d4d4d8;
+  --color-gold-400: #a1a1aa;
+  --color-gold-500: #71717a;
+  --color-gold-600: #52525b;
+  --color-gold-700: #3f3f46;
+  --color-gold-800: #27272a;
+  --color-gold-900: #18181b;
+  --color-gold-950: #09090b;
+  --color-gold-accent: #ffffff; /* mapped to white for stark contrast */
 
   --color-red-50: #fef2f2;
   --color-red-100: #fee2e2;
@@ -64,7 +64,7 @@ html, body {
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Gold radial glow */
+/* Red radial glow (previously gold) */
 .gold-glow-container {
   position: relative;
 }
@@ -73,7 +73,7 @@ html, body {
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  box-shadow: 0 0 40px rgba(212, 175, 55, 0.08);
+  box-shadow: 0 0 60px rgba(200, 16, 46, 0.15);
   opacity: 0;
   transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   pointer-events: none;

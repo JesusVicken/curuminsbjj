@@ -20,6 +20,8 @@ import {
   Youtube,
   Star,
   BookOpen,
+  User,
+  Briefcase,
 } from "lucide-react";
 
 export const Icons = {
@@ -43,6 +45,8 @@ export const Icons = {
   Youtube,
   Star,
   BookOpen,
+  User,
+  Briefcase,
   // Custom SVG Belt Icon (BJJ Theme)
   Belt: (props: React.SVGProps<SVGSVGElement>) => (
     <svg

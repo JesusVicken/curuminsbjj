@@ -49,14 +49,20 @@ export const Hero: React.FC = () => {
       {/* Preloader */}
       <Preloader onComplete={handlePreloaderComplete} />
 
-      {/* WebGL Shader Background */}
-      <HeroShaderBg />
+      {/* Background Image Project */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src="/imagesprojeto/projeto7.jpeg" 
+          alt="Projeto Curumins BJJ na Aldeia" 
+          className="w-full h-full object-cover grayscale-[20%] opacity-40" 
+        />
+      </div>
 
       {/* Grid Pattern overlay for tech-editorial look */}
       <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
 
       {/* Vignette ambient overlay */}
-      <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_center,transparent_30%,#030303_95%)] pointer-events-none" />
+      <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_center,transparent_20%,#030303_95%)] pointer-events-none" />
 
       {/* Hero Content */}
       <div className="relative z-10 w-full max-w-7xl px-6 lg:px-8">

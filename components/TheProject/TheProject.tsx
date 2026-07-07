@@ -15,21 +15,21 @@ export const TheProject: React.FC = () => {
           {/* Main Storytelling Heading */}
           <div className="lg:col-span-6">
             <FadeIn direction="right">
-              <span className="text-xs font-bold uppercase tracking-widest text-gold-accent">
+              <span className="text-xs font-bold uppercase tracking-widest text-red-accent">
                 Inclusão & Transformação
               </span>
               <h2 className="mt-6 font-display text-4xl font-extrabold tracking-tight text-white sm:text-6xl leading-tight uppercase">
                 Jiu-jitsu como catalisador de <span className="text-red-accent">futuros</span>.
               </h2>
               <p className="mt-8 text-lg text-zinc-300 leading-relaxed font-light">
-                O compromisso da Curumins BJJ é oferecer a essas crianças indígenas um ambiente 
-                saudável de aprendizado, disciplina e acolhimento. Acreditamos que o esporte atua como 
-                um caminho extremamente positivo e transformador.
+                O projeto Curumins BJJ atua diretamente dentro da Aldeia Teko Haw, em Brasília, 
+                trazendo a filosofia milenar das artes marciais para crianças indígenas. Com o apoio 
+                da comunidade e de mestres como Renzo Gracie, o jiu-jitsu transforma rotinas e salva vidas.
               </p>
               <p className="mt-6 text-base text-zinc-400 leading-relaxed font-light">
-                Nosso trabalho busca transmitir os valores tradicionais da arte marcial para a formação 
-                pessoal de cada curumim, ajudando-os no dia a dia familiar e escolar, bem como os preparando 
-                para o esporte de competição.
+                Conforme destacado por reportagens do G1 e da Record TV, a prática reforça a autoestima, a 
+                disciplina e valoriza a rica cultura indígena. Mais do que formar atletas, o projeto cria 
+                cidadãos fortes, preparados para os desafios dentro e fora da aldeia.
               </p>
             </FadeIn>
           </div>
@@ -47,7 +47,7 @@ export const TheProject: React.FC = () => {
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     loading="lazy"
                   />
-                  <div className="absolute bottom-4 left-4 right-4 bg-zinc-950/85 backdrop-blur px-4 py-2 rounded-2xl text-[9px] text-gold-accent font-bold uppercase tracking-widest border border-white/5">
+                  <div className="absolute bottom-4 left-4 right-4 bg-zinc-950/85 backdrop-blur px-4 py-2 rounded-2xl text-[9px] text-white font-bold uppercase tracking-widest border border-white/5">
                     Conexão Comunitária
                   </div>
                 </div>
@@ -60,7 +60,7 @@ export const TheProject: React.FC = () => {
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     loading="lazy"
                   />
-                  <div className="absolute bottom-4 left-4 right-4 bg-zinc-950/85 backdrop-blur px-4 py-2 rounded-2xl text-[9px] text-gold-accent font-bold uppercase tracking-widest border border-white/5">
+                  <div className="absolute bottom-4 left-4 right-4 bg-zinc-950/85 backdrop-blur px-4 py-2 rounded-2xl text-[9px] text-white font-bold uppercase tracking-widest border border-white/5">
                     União no Tatame
                   </div>
                 </div>
