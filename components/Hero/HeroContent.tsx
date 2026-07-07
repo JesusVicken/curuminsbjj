@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useRef, useState } from "react";
-import QRCode from "react-qr-code";
 import { Button } from "@/components/UI/Button";
 import { Icons } from "@/components/Icons";
 import { gsap } from "@/lib/gsap";
@@ -121,7 +120,7 @@ export const HeroContent: React.FC = () => {
       {/* PIX Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 bg-zinc-950/80 backdrop-blur-md animate-fade-in">
-          <div className="relative bg-zinc-900 border border-white/10 p-8 rounded-3xl max-w-sm w-full text-center shadow-2xl flex flex-col items-center">
+          <div className="relative bg-zinc-900 border border-white/10 p-6 sm:p-8 rounded-3xl max-w-sm w-[90vw] sm:w-full text-center shadow-2xl flex flex-col items-center">
             <button 
               onClick={() => setIsModalOpen(false)}
               className="absolute top-4 right-4 text-zinc-400 hover:text-white transition-colors"
@@ -133,13 +132,11 @@ export const HeroContent: React.FC = () => {
               Escaneie o QR Code abaixo com o aplicativo do seu banco ou copie o e-mail.
             </p>
             
-            <div className="bg-white p-4 rounded-2xl mb-6 shadow-inner">
-              <QRCode 
-                value="projetocuruminsbjj@gmail.com"
-                size={200}
-                bgColor="#ffffff"
-                fgColor="#000000"
-                level="H"
+            <div className="bg-white p-2 rounded-2xl mb-6 shadow-inner w-full aspect-square flex justify-center items-center overflow-hidden">
+              <img 
+                src="/qrcode.jpg" 
+                alt="QR Code PIX do Projeto" 
+                className="w-full h-full object-contain"
               />
             </div>
             

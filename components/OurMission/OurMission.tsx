@@ -8,7 +8,7 @@ export const OurMission: React.FC = () => {
     <section id="mission" className="relative py-32 md:py-40 bg-zinc-950 overflow-hidden border-y border-white/5">
       {/* Background Image with Fixed Attachment for Parallax */}
       <div 
-        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-fixed opacity-30 grayscale-[50%]"
+        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-fixed opacity-30"
         style={{ backgroundImage: "url('/estrutrura.webp')" }}
       />
       <div className="absolute inset-0 z-0 bg-zinc-950/80" />

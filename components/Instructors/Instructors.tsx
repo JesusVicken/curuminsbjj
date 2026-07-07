@@ -38,7 +38,7 @@ export const Instructors: React.FC = () => {
                 <img 
                   src="/hero.webp" 
                   alt="Professor Daniel Badke Lino" 
-                  className="w-full h-full object-cover object-center grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out"
+                  className="w-full h-full object-cover object-center transition-all duration-700 ease-in-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent" />
                 

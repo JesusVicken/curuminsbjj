@@ -30,8 +30,17 @@ export const Testimonials: React.FC = () => {
   ];
 
   return (
-    <section id="testimonials" className="py-32 md:py-48 bg-zinc-950">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <section id="testimonials" className="relative py-32 md:py-48 bg-zinc-950 overflow-hidden">
+      {/* Parallax Background Image */}
+      <div 
+        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-fixed opacity-20"
+        style={{ backgroundImage: "url('/image4.jpg')" }}
+      />
+      {/* Gradient fading masks for scroll effect */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-b from-zinc-950 via-transparent to-zinc-950" />
+      <div className="absolute inset-0 z-0 bg-zinc-950/80" />
+
+      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="mx-auto max-w-3xl text-center mb-20">

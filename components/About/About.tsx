@@ -34,12 +34,14 @@ export const About: React.FC = () => {
 
   return (
     <section id="about" className="relative py-32 md:py-48 bg-zinc-950 overflow-hidden">
-      {/* Background Image */}
+      {/* Parallax Background Image */}
       <div 
-        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-20"
+        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-fixed opacity-30"
         style={{ backgroundImage: "url('/image5.jpg')" }}
       />
-      <div className="absolute inset-0 z-0 bg-gradient-to-t from-zinc-950 via-zinc-950/80 to-zinc-950/90" />
+      {/* Gradient fading masks for scroll effect */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-b from-zinc-950 via-transparent to-zinc-950" />
+      <div className="absolute inset-0 z-0 bg-zinc-950/70" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
