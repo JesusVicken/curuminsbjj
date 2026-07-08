@@ -52,7 +52,7 @@ export const Hero: React.FC = () => {
       {/* Background Image Project */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="/imagesprojeto/projeto7.jpeg" 
+          src="/imagesprojeto/projeto22.jpeg" 
           alt="Projeto Curumins BJJ na Aldeia" 
           className="w-full h-full object-cover grayscale-[20%] opacity-40" 
         />
