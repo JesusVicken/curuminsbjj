@@ -19,22 +19,44 @@ export const ContactForm: React.FC = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate API Call
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSuccess(true);
-      setFormData({
-        name: "",
-        phone: "",
-        email: "",
-        supportType: "transporte",
-        message: "",
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/projetocuruminsbjj@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          _subject: "Novo Contato - Site Curumins BJJ",
+          Nome: formData.name,
+          WhatsApp: formData.phone,
+          Email: formData.email,
+          TipoDeApoio: formData.supportType,
+          Mensagem: formData.message,
+        }),
       });
-    }, 1500);
+
+      if (response.ok) {
+        setIsSuccess(true);
+        setFormData({
+          name: "",
+          phone: "",
+          email: "",
+          supportType: "transporte",
+          message: "",
+        });
+      } else {
+        alert("Ocorreu um erro ao enviar. Por favor, tente novamente ou mande mensagem pelo WhatsApp.");
+      }
+    } catch (error) {
+      alert("Erro de conexão. Verifique sua internet e tente novamente.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -74,7 +96,7 @@ export const ContactForm: React.FC = () => {
                 value={formData.name}
                 onChange={handleChange}
                 placeholder="Ex: João Silva"
-                className="h-12 px-4 rounded-full border border-white/5 bg-zinc-950/40 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-gold-accent focus:ring-1 focus:ring-gold-accent/20 transition-all duration-300"
+                className="h-12 px-4 rounded-full border border-white/5 bg-zinc-950/40 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-red-accent focus:ring-1 focus:ring-red-accent/20 transition-all duration-300"
               />
             </div>
 
@@ -91,7 +113,7 @@ export const ContactForm: React.FC = () => {
                 value={formData.phone}
                 onChange={handleChange}
                 placeholder="Ex: (61) 99999-9999"
-                className="h-12 px-4 rounded-full border border-white/5 bg-zinc-950/40 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-gold-accent focus:ring-1 focus:ring-gold-accent/20 transition-all duration-300"
+                className="h-12 px-4 rounded-full border border-white/5 bg-zinc-950/40 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-red-accent focus:ring-1 focus:ring-red-accent/20 transition-all duration-300"
               />
             </div>
           </div>
@@ -110,7 +132,7 @@ export const ContactForm: React.FC = () => {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="Ex: joao@email.com"
-                className="h-12 px-4 rounded-full border border-white/5 bg-zinc-950/40 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-gold-accent focus:ring-1 focus:ring-gold-accent/20 transition-all duration-300"
+                className="h-12 px-4 rounded-full border border-white/5 bg-zinc-950/40 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-red-accent focus:ring-1 focus:ring-red-accent/20 transition-all duration-300"
               />
             </div>
 
@@ -124,9 +146,9 @@ export const ContactForm: React.FC = () => {
                 name="supportType"
                 value={formData.supportType}
                 onChange={handleChange}
-                className="h-12 px-4 rounded-full border border-white/5 bg-zinc-950/40 text-sm text-white focus:outline-none focus:border-gold-accent transition-all duration-300 cursor-pointer"
+                className="h-12 px-4 rounded-full border border-white/5 bg-zinc-950/40 text-sm text-white focus:outline-none focus:border-red-accent transition-all duration-300 cursor-pointer"
               >
-                <option value="transporte" className="bg-zinc-950 text-white">Transporte (Competição 16/05)</option>
+                <option value="transporte" className="bg-zinc-950 text-white">Transporte (Competições)</option>
                 <option value="financeiro" className="bg-zinc-950 text-white">Donativo Financeiro Voluntário</option>
                 <option value="equipamento" className="bg-zinc-950 text-white">Kimonos e Equipamentos</option>
                 <option value="voluntario" className="bg-zinc-950 text-white">Desejo ser Instrutor Voluntário</option>
@@ -147,12 +169,12 @@ export const ContactForm: React.FC = () => {
               value={formData.message}
               onChange={handleChange}
               placeholder="Descreva aqui sua intenção de apoio ou dúvidas sobre o projeto."
-              className="p-4 rounded-3xl border border-white/5 bg-zinc-950/40 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-gold-accent focus:ring-1 focus:ring-gold-accent/20 transition-all duration-300 resize-none"
+              className="p-4 rounded-3xl border border-white/5 bg-zinc-950/40 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-red-accent focus:ring-1 focus:ring-red-accent/20 transition-all duration-300 resize-none"
             />
           </div>
 
           {/* Submit button */}
-          <Button type="submit" variant="gold" size="lg" isLoading={isSubmitting}>
+          <Button type="submit" variant="primary" size="lg" isLoading={isSubmitting}>
             Enviar Mensagem de Apoio
           </Button>
         </>

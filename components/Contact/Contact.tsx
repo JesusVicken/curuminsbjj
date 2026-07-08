@@ -18,8 +18,8 @@ export const Contact: React.FC = () => {
     {
       icon: Icons.Phone,
       title: "WhatsApp Coordenador",
-      value: "+55 (61) 99999-9999 (Daniel BJJ)",
-      href: "https://wa.me/5561999999999",
+      value: "+55 (61) 98151-4085 (Daniel)",
+      href: "https://wa.me/5561981514085",
     },
     {
       icon: Icons.Mail,
@@ -60,23 +60,24 @@ export const Contact: React.FC = () => {
           {/* Contact Details Column */}
           <div className="lg:col-span-5 flex flex-col gap-6">
             
-            {/* Prominent Golden Pix Card */}
+            {/* Prominent Red Pix Card */}
             <FadeIn direction="right" delay={0}>
               <div
                 onClick={handleCopyPix}
-                className="flex gap-4 p-6 rounded-3xl bg-gold-accent/5 border border-gold-accent/20 shadow-2xl cursor-pointer hover:bg-gold-accent/10 hover:border-gold-accent/45 transition-all duration-300 group"
+                className="flex flex-col sm:flex-row items-center gap-6 p-6 rounded-3xl bg-red-accent/5 border border-red-accent/20 shadow-2xl cursor-pointer hover:bg-red-accent/10 hover:border-red-accent/45 transition-all duration-300 group"
               >
-                <div className="h-10 w-10 rounded-2xl bg-gold-accent/10 border border-gold-accent/20 flex items-center justify-center text-gold-accent flex-shrink-0">
-                  <Icons.Award className="h-5 w-5" />
+                {/* QR Code Image */}
+                <div className="bg-white p-2 rounded-2xl shadow-inner w-24 aspect-square flex justify-center items-center overflow-hidden flex-shrink-0">
+                  <img src="/qrcode.jpg" alt="QR Code PIX" className="w-full h-full object-contain" />
                 </div>
-                <div className="flex-grow">
-                  <h3 className="text-[10px] font-bold text-gold-accent uppercase tracking-widest">
+                <div className="flex-grow text-center sm:text-left">
+                  <h3 className="text-[10px] font-bold text-red-accent uppercase tracking-widest">
                     Chave Pix (E-mail)
                   </h3>
                   <p className="text-sm font-semibold text-white mt-1.5 break-all">
                     projetocuruminsbjj@gmail.com
                   </p>
-                  <p className="text-[9px] text-zinc-500 uppercase font-bold tracking-wider mt-1 group-hover:text-gold-accent transition-colors">
+                  <p className="text-[9px] text-zinc-500 uppercase font-bold tracking-wider mt-1 group-hover:text-red-accent transition-colors">
                     {copied ? "Copiado com sucesso!" : "Clique para copiar a chave Pix"}
                   </p>
                 </div>
@@ -89,7 +90,7 @@ export const Contact: React.FC = () => {
               return (
                 <FadeIn key={detail.title} direction="right" delay={0.1 * (idx + 1)}>
                   <div className="flex gap-4 p-6 rounded-3xl bg-zinc-900/10 border border-white/5 shadow-2xl">
-                    <div className="h-10 w-10 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-gold-accent flex-shrink-0">
+                    <div className="h-10 w-10 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-red-accent flex-shrink-0">
                       <Icon className="h-5 w-5" />
                     </div>
                     <div>
@@ -101,7 +102,7 @@ export const Contact: React.FC = () => {
                           href={detail.href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-sm font-semibold text-white hover:text-gold-accent mt-1.5 block transition-colors"
+                          className="text-sm font-semibold text-white hover:text-red-accent mt-1.5 block transition-colors"
                         >
                           {detail.value}
                         </a>

@@ -6,7 +6,7 @@ import { cn } from "@/utils/cn";
 
 interface FAQItemProps {
   question: string;
-  answer: string;
+  answer: React.ReactNode;
 }
 
 export const FAQItem: React.FC<FAQItemProps> = ({ question, answer }) => {
@@ -18,12 +18,12 @@ export const FAQItem: React.FC<FAQItemProps> = ({ question, answer }) => {
         onClick={() => setIsOpen(!isOpen)}
         className="flex w-full items-center justify-between text-left font-sans text-base font-bold text-white cursor-pointer py-2 focus:outline-none group"
       >
-        <span className="group-hover:text-gold-accent transition-colors duration-300">{question}</span>
+        <span className="group-hover:text-red-accent transition-colors duration-300">{question}</span>
         <span className="ml-4 flex-shrink-0 text-zinc-500">
           {isOpen ? (
-            <Icons.ChevronUp className="h-5 w-5 text-gold-accent" />
+            <Icons.ChevronUp className="h-5 w-5 text-red-accent" />
           ) : (
-            <Icons.ChevronDown className="h-5 w-5 group-hover:text-gold-accent transition-colors" />
+            <Icons.ChevronDown className="h-5 w-5 group-hover:text-red-accent transition-colors" />
           )}
         </span>
       </button>
@@ -34,7 +34,7 @@ export const FAQItem: React.FC<FAQItemProps> = ({ question, answer }) => {
         )}
       >
         <div className="overflow-hidden">
-          <p className="pb-4 leading-relaxed font-light">{answer}</p>
+          <div className="pb-4 leading-relaxed font-light">{answer}</div>
         </div>
       </div>
     </div>

@@ -29,7 +29,7 @@ export const Sponsors: React.FC = () => {
 
       <div className="relative z-10 mx-auto max-w-5xl px-6 lg:px-8 text-center">
         <FadeIn direction="up">
-          <span className="text-xs font-bold tracking-widest text-gold-accent uppercase">
+          <span className="text-xs font-bold tracking-widest text-red-accent uppercase">
             Apoie Financeiramente
           </span>
           <h2 className="mt-4 font-display text-3xl font-extrabold tracking-tight text-white sm:text-5xl uppercase leading-none">
@@ -43,25 +43,25 @@ export const Sponsors: React.FC = () => {
 
         {/* Central interactive Pix Card */}
         <FadeIn direction="up" delay={0.2}>
-          <div className="mt-12 max-w-md mx-auto">
+          <div className="mt-12 max-w-lg mx-auto">
             <div
               onClick={handleCopyPix}
-              className="flex flex-col sm:flex-row items-center gap-4 p-6 rounded-3xl bg-gold-accent/5 border border-gold-accent/20 hover:border-gold-accent/40 hover:bg-gold-accent/10 transition-all duration-300 shadow-2xl cursor-pointer group"
+              className="flex flex-col sm:flex-row items-center gap-6 p-6 rounded-3xl bg-red-accent/5 border border-red-accent/20 hover:border-red-accent/40 hover:bg-red-accent/10 transition-all duration-300 shadow-2xl cursor-pointer group"
             >
-              {/* Copy/Pix Icon */}
-              <div className="h-12 w-12 rounded-2xl bg-gold-accent/10 border border-gold-accent/20 flex items-center justify-center text-gold-accent flex-shrink-0">
-                <Icons.Award className="h-6 w-6" />
+              {/* QR Code Image */}
+              <div className="bg-white p-2 rounded-2xl shadow-inner w-32 aspect-square flex justify-center items-center overflow-hidden flex-shrink-0">
+                <img src="/qrcode.jpg" alt="QR Code PIX" className="w-full h-full object-contain" />
               </div>
               
               {/* Text and Copy Info */}
               <div className="text-center sm:text-left flex-grow">
-                <p className="text-[10px] font-bold text-gold-accent uppercase tracking-widest leading-none">
+                <p className="text-[10px] font-bold text-red-accent uppercase tracking-widest leading-none">
                   Chave Pix (E-mail do Projeto)
                 </p>
                 <p className="text-base font-bold text-white mt-2 tracking-wide break-all font-mono">
                   projetocuruminsbjj@gmail.com
                 </p>
-                <p className="text-[9px] text-zinc-500 uppercase font-bold tracking-wider mt-1 group-hover:text-gold-accent transition-colors">
+                <p className="text-[9px] text-zinc-500 uppercase font-bold tracking-wider mt-2 group-hover:text-red-accent transition-colors">
                   {copied ? "Copiado com sucesso!" : "Clique para copiar a chave Pix"}
                 </p>
               </div>

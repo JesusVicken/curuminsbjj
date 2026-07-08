@@ -7,9 +7,13 @@ import { Icons } from "@/components/Icons";
 export const Instructors: React.FC = () => {
   return (
     <section id="idealizador" className="py-32 md:py-48 bg-zinc-950 relative overflow-hidden border-t border-white/5">
-      {/* Glow effect */}
+      {/* Glow effect and Parallax Background */}
+      <div 
+        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-fixed opacity-20"
+        style={{ backgroundImage: "url('/imagesprojeto/projeto16.jpeg')" }}
+      />
+      <div className="absolute inset-0 z-0 bg-gradient-to-b from-zinc-950 via-zinc-950/80 to-zinc-950" />
       <div className="absolute top-1/4 -left-64 w-[500px] h-[500px] bg-red-accent/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-gold-accent/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
         
@@ -62,18 +66,22 @@ export const Instructors: React.FC = () => {
           {/* Right Column: Curriculum Details */}
           <div className="lg:col-span-7 flex flex-col gap-16">
             
-            {/* About & Profile */}
+            {/* Redes Sociais */}
             <FadeIn direction="up" delay={0.1}>
               <div className="space-y-6">
                 <h3 className="text-xl font-display font-bold text-white uppercase tracking-wide border-b border-white/10 pb-4 flex items-center gap-3">
-                  <Icons.User className="h-6 w-6 text-gold-accent" /> Perfil & Características
+                  <Icons.Instagram className="h-6 w-6 text-red-accent" /> Redes Sociais
                 </h3>
-                <div className="flex flex-wrap gap-3">
-                  {["Paciente", "Carismático", "Criativo", "Boa Comunicação", "Pontual", "Responsável"].map((trait) => (
-                    <span key={trait} className="px-4 py-2 rounded-full bg-zinc-900 border border-white/5 text-sm text-zinc-300 font-medium">
-                      {trait}
-                    </span>
-                  ))}
+                <div className="flex flex-col gap-3">
+                  <a href="https://instagram.com/danielbadkelino" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-zinc-300 font-medium hover:text-white transition-colors w-fit">
+                    <span className="text-red-accent">@</span>instagram/danielbadkelino
+                  </a>
+                  <a href="https://instagram.com/projetocuruminsbjj" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-zinc-300 font-medium hover:text-white transition-colors w-fit">
+                    <span className="text-red-accent">@</span>projetocuruminsbjj
+                  </a>
+                  <a href="https://instagram.com/raianorteesportes" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-zinc-300 font-medium hover:text-white transition-colors w-fit">
+                    <span className="text-red-accent">@</span>raianorteesportes
+                  </a>
                 </div>
               </div>
             </FadeIn>

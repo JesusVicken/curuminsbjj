@@ -41,7 +41,7 @@ export default function Sobre() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {/* Media Cards */}
               <div className="rounded-3xl overflow-hidden border border-white/10 shadow-2xl h-80 relative group">
-                <img src="/image2.jpg" alt="Ambiente do projeto" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                <img src="/imagesprojeto/projeto13.jpeg" alt="Ambiente do projeto" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 to-transparent pointer-events-none" />
                 <div className="absolute bottom-6 left-6 text-white font-bold uppercase tracking-widest text-xs">Treino Coletivo</div>
               </div>
@@ -49,7 +49,7 @@ export default function Sobre() {
                 <video src="/imagesprojeto/videoprojeto5.mp4" controls className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" poster="/logocurumin.png" preload="metadata" />
               </div>
               <div className="rounded-3xl overflow-hidden border border-white/10 shadow-2xl h-80 relative group lg:col-span-1 md:col-span-2">
-                <img src="/image3.jpg" alt="Alegria no tatame" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                <img src="/imagesprojeto/projeto10.jpeg" alt="Alegria no tatame" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 to-transparent pointer-events-none" />
                 <div className="absolute bottom-6 left-6 text-white font-bold uppercase tracking-widest text-xs">Alegria & União</div>
               </div>
