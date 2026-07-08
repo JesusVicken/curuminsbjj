@@ -9,7 +9,7 @@ export const Instructors: React.FC = () => {
     <section id="idealizador" className="py-32 md:py-48 bg-zinc-950 relative overflow-hidden border-t border-white/5">
       {/* Glow effect and Parallax Background */}
       <div 
-        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-fixed opacity-20"
+        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-fixed opacity-40"
         style={{ backgroundImage: "url('/imagesprojeto/projeto16.jpeg')" }}
       />
       <div className="absolute inset-0 z-0 bg-gradient-to-b from-zinc-950 via-zinc-950/80 to-zinc-950" />

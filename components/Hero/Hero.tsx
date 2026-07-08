@@ -49,12 +49,15 @@ export const Hero: React.FC = () => {
       {/* Preloader */}
       <Preloader onComplete={handlePreloaderComplete} />
 
-      {/* Background Image Project */}
+      {/* Background Video Project */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src="/imagesprojeto/projeto22.jpeg" 
-          alt="Projeto Curumins BJJ na Aldeia" 
-          className="w-full h-full object-cover grayscale-[20%] opacity-40" 
+        <video 
+          src="/imagesprojeto/videoprojeto12.mp4" 
+          autoPlay 
+          loop 
+          muted 
+          playsInline
+          className="w-full h-full object-cover opacity-60" 
         />
       </div>
 

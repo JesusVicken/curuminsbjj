@@ -17,7 +17,7 @@ export const Sponsors: React.FC = () => {
     <section id="sponsors" className="relative py-24 bg-zinc-950 overflow-hidden border-t border-white/5">
       {/* Parallax Background Image */}
       <div 
-        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-fixed opacity-20"
+        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-fixed opacity-40"
         style={{ backgroundImage: "url('/image6.jpg')" }}
       />
       {/* Gradient fading masks for scroll effect */}

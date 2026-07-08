@@ -6,11 +6,17 @@ import { FadeIn } from "@/components/Animations";
 export const OurMission: React.FC = () => {
   return (
     <section id="mission" className="relative py-32 md:py-40 bg-zinc-950 overflow-hidden border-y border-white/5">
-      {/* Background Image with Fixed Attachment for Parallax */}
-      <div 
-        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-fixed opacity-30"
-        style={{ backgroundImage: "url('/estrutrura.webp')" }}
-      />
+      {/* Background Video */}
+      <div className="absolute inset-0 z-0">
+        <video 
+          src="/imagesprojeto/videoprojeto2.mp4" 
+          autoPlay 
+          loop 
+          muted 
+          playsInline
+          className="w-full h-full object-cover opacity-40" 
+        />
+      </div>
       <div className="absolute inset-0 z-0 bg-zinc-950/80" />
 
       {/* Decorative Radial Lighting */}
