@@ -47,10 +47,10 @@ export const Navbar: React.FC = () => {
           <Link href="#" className="flex items-center gap-3 font-display text-lg font-black tracking-widest text-white uppercase group">
             <img
               src="/logocurumin.png"
-              alt="Logo Curumins BJJ"
+              alt="Logo Instituto Projeto Curumins BJJ"
               className="h-10 w-10 object-contain rounded-full border border-white/10 group-hover:scale-105 transition-transform duration-300"
             />
-            <span>Curumins <span className="text-gold-accent font-light">BJJ</span></span>
+            <span className="hidden sm:inline-block">Instituto Projeto Curumins <span className="text-red-accent font-light">BJJ</span></span>
           </Link>
 
           {/* Desktop Navigation */}

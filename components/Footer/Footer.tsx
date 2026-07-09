@@ -16,10 +16,10 @@ export const Footer: React.FC = () => {
             <Link href="/" className="flex items-center gap-3 font-display text-lg font-black tracking-widest text-white uppercase group">
               <img
                 src="/logocurumin.png"
-                alt="Logo Curumins BJJ"
+                alt="Logo Instituto Projeto Curumins BJJ"
                 className="h-10 w-10 object-contain rounded-full border border-white/10"
               />
-              <span>Curumins <span className="text-gold-accent font-light">BJJ</span></span>
+              <span>Instituto Projeto Curumins <span className="text-red-accent font-light">BJJ</span></span>
             </Link>
             <p className="text-sm text-zinc-400 leading-relaxed font-light">
               Ferramenta de inclusão social e pertencimento cultural para crianças indígenas em Brasília, 
@@ -46,7 +46,7 @@ export const Footer: React.FC = () => {
 
         {/* Copyright and Metadata */}
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mt-8 text-[10px] text-zinc-500 uppercase tracking-widest font-semibold">
-          <p>&copy; {new Date().getFullYear()} Curumins BJJ. Todos os direitos reservados.</p>
+          <p>&copy; {new Date().getFullYear()} Instituto Projeto Curumins BJJ. Todos os direitos reservados.</p>
           <p>
             Forjando Caráter e Respeito no Tatame.
           </p>

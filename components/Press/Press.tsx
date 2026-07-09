@@ -7,6 +7,15 @@ import { Icons } from "@/components/Icons";
 
 export const Press: React.FC = () => {
   const [filter, setFilter] = useState<"all" | "video" | "news" | "social">("all");
+  const videoRef = React.useRef<HTMLVideoElement>(null);
+
+  React.useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.defaultMuted = true;
+      videoRef.current.muted = true;
+      videoRef.current.play().catch((e) => console.log("Autoplay prevented:", e));
+    }
+  }, []);
 
   const articles = [
     {
@@ -67,7 +76,7 @@ export const Press: React.FC = () => {
     },
     {
       source: "YouTube Vídeo",
-      title: "Vídeo Institucional - Projeto Curumins BJJ",
+      title: "Vídeo Institucional - Instituto Projeto Curumins BJJ",
       description: "Confira imagens exclusivas das aulas, depoimentos de lideranças e a alegria dos alunos.",
       link: "https://youtu.be/cXyml43QBDY",
       type: "video",
@@ -80,19 +89,32 @@ export const Press: React.FC = () => {
   );
 
   return (
-    <section id="press" className="py-32 bg-zinc-950 relative overflow-hidden">
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-gold-accent/5 rounded-full blur-3xl pointer-events-none" />
+    <section id="press" className="py-32 bg-zinc-950 relative overflow-hidden border-t border-white/5">
+      {/* Background Video */}
+      <div className="absolute inset-0 z-0">
+        <video 
+          ref={videoRef}
+          src="/imagesprojeto/videoprojeto14.mp4" 
+          autoPlay 
+          loop 
+          muted 
+          playsInline
+          className="w-full h-full object-cover opacity-20" 
+        />
+      </div>
+      <div className="absolute inset-0 z-0 bg-gradient-to-b from-zinc-950 via-transparent to-zinc-950" />
+      <div className="absolute inset-0 z-0 bg-zinc-950/80" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="mx-auto max-w-3xl text-center mb-16">
           <FadeIn direction="up">
-            <span className="text-xs font-bold tracking-widest text-gold-accent uppercase">
+            <span className="text-xs font-bold tracking-widest text-red-accent uppercase">
               Imprensa & Mídia
             </span>
             <h2 className="mt-6 font-display text-3xl font-extrabold tracking-tight text-white sm:text-5xl leading-[0.95] uppercase">
-              O projeto na mídia nacional
+              O Instituto na Mídia Nacional
             </h2>
             <p className="mt-4 text-base text-zinc-400 max-w-2xl mx-auto font-light">
               Assista a reportagens de TV e leia notícias escritas sobre o impacto real das aulas de
@@ -109,7 +131,7 @@ export const Press: React.FC = () => {
               onClick={() => setFilter(type)}
               className={`px-6 py-2 rounded-full text-xs font-semibold tracking-wider uppercase border transition-all duration-300 cursor-pointer ${
                 filter === type
-                  ? "bg-gold-accent border-transparent text-zinc-950 font-bold"
+                  ? "bg-red-accent border-transparent text-white font-bold"
                   : "border-white/10 bg-transparent text-zinc-400 hover:text-white hover:border-zinc-700"
               }`}
             >
@@ -122,8 +144,24 @@ export const Press: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredArticles.map((art, idx) => {
             const Icon = art.icon;
-            // Use a deterministic placeholder image based on the index to make it look varied
-            const imagePlaceholder = `/imagesprojeto/projeto${(idx % 22) + 1}.jpeg`;
+            
+            const bjjImages = [
+              "/imagesprojeto/projeto9.jpeg",
+              "/imagesprojeto/projeto10.jpeg",
+              "/imagesprojeto/projeto11.jpeg",
+              "/imagesprojeto/projeto12.jpeg",
+              "/imagesprojeto/projeto13.jpeg",
+              "/imagesprojeto/projeto14.jpeg",
+              "/imagesprojeto/projeto15.jpeg",
+              "/imagesprojeto/projeto17.jpeg",
+              "/imagesprojeto/projeto19.jpeg",
+              "/imagesprojeto/projeto20.jpeg",
+              "/imagesprojeto/projeto21.jpeg",
+              "/imagesprojeto/projeto22.jpeg",
+            ];
+            
+            // Use a deterministic placeholder image from valid BJJ images
+            const imagePlaceholder = bjjImages[idx % bjjImages.length];
 
             return (
               <FadeIn key={art.link} direction="up" delay={0.08 * idx}>

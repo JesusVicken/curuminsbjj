@@ -28,7 +28,7 @@ export const TheProject: React.FC = () => {
                 Jiu-jitsu como catalisador de <span className="text-red-accent">futuros</span>.
               </h2>
               <p className="mt-8 text-lg text-zinc-300 leading-relaxed font-light">
-                O projeto Curumins BJJ atua diretamente dentro da Aldeia Teko Haw, em Brasília, 
+                O Instituto Projeto Curumins BJJ atua diretamente dentro da Aldeia Teko Haw, em Brasília, 
                 trazendo a filosofia milenar das artes marciais para crianças indígenas. Com o apoio 
                 da comunidade e de mestres como Renzo Gracie, o jiu-jitsu transforma rotinas e salva vidas.
               </p>
@@ -59,11 +59,11 @@ export const TheProject: React.FC = () => {
                 </div>
 
                 {/* Team BJJ Hero image card (16:9 aspect ratio support) */}
-                <div className="w-full sm:w-7/12 aspect-video sm:aspect-auto sm:h-[400px] rounded-[32px] overflow-hidden border border-white/5 shadow-2xl relative group sm:translate-y-8 flex items-center bg-zinc-900">
+                <div className="w-full sm:w-7/12 aspect-video rounded-[32px] overflow-hidden border border-white/5 shadow-2xl relative group sm:translate-y-8 flex items-center bg-zinc-900">
                   <img
                     src="/hero.webp"
                     alt="Equipe Curumins"
-                    className="w-full h-full object-contain sm:object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     loading="lazy"
                   />
                   <div className="absolute bottom-4 left-4 right-4 bg-zinc-950/85 backdrop-blur px-4 py-2 rounded-2xl text-[9px] text-white font-bold uppercase tracking-widest border border-white/5">

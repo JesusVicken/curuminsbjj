@@ -4,12 +4,23 @@ import React from "react";
 import { FadeIn } from "@/components/Animations";
 
 export const OurMission: React.FC = () => {
+  const videoRef = React.useRef<HTMLVideoElement>(null);
+
+  React.useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.defaultMuted = true;
+      videoRef.current.muted = true;
+      videoRef.current.play().catch((e) => console.log("Autoplay prevented:", e));
+    }
+  }, []);
+
   return (
     <section id="mission" className="relative py-32 md:py-40 bg-zinc-950 overflow-hidden border-y border-white/5">
       {/* Background Video */}
       <div className="absolute inset-0 z-0">
         <video 
-          src="/imagesprojeto/videoprojeto2.mp4" 
+          ref={videoRef}
+          src="/imagesprojeto/videoprojeto8.mp4" 
           autoPlay 
           loop 
           muted 
@@ -39,11 +50,11 @@ export const OurMission: React.FC = () => {
 
         <FadeIn direction="up" delay={0.4}>
           <div className="mt-10 flex items-center justify-center gap-4">
-            <span className="h-px w-8 bg-gold-accent/40" />
-            <p className="text-sm font-sans font-semibold uppercase tracking-widest text-gold-accent">
-              Metodologia Curumins BJJ
+            <span className="h-px w-8 bg-red-accent/40" />
+            <p className="text-sm font-sans font-semibold uppercase tracking-widest text-red-accent">
+              Metodologia Instituto Projeto Curumins BJJ
             </p>
-            <span className="h-px w-8 bg-gold-accent/40" />
+            <span className="h-px w-8 bg-red-accent/40" />
           </div>
         </FadeIn>
       </div>

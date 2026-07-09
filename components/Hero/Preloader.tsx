@@ -80,7 +80,7 @@ export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
       <div className="preloader-panel-top w-full h-1/2 bg-zinc-950 flex flex-col justify-between p-12 border-b border-white/5 relative z-10">
         <div className="flex justify-between items-center w-full max-w-7xl mx-auto">
           <span className="text-[10px] font-bold uppercase tracking-widest text-red-accent">
-            Curumins BJJ
+            Instituto Projeto Curumins BJJ
           </span>
           <span className="text-[9px] font-bold uppercase tracking-widest text-zinc-600">
             © 2026 DOJO
@@ -94,7 +94,7 @@ export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
           <img
             ref={logoRef}
             src="/logocurumin.png"
-            alt="Logo Curumins BJJ"
+            alt="Logo Instituto Projeto Curumins BJJ"
             className="w-full h-full object-contain select-none drop-shadow-2xl"
           />
         </div>

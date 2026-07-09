@@ -38,7 +38,7 @@ export const Gallery: React.FC = () => {
               A Realidade do <span className="text-red-accent">Projeto</span>
             </h2>
             <p className="mt-8 text-lg text-zinc-300 max-w-3xl mx-auto font-light leading-relaxed">
-              O **Projeto Curumins BJJ** é uma iniciativa independente que respira a vontade de transformar vidas. 
+              O **Instituto Projeto Curumins BJJ** é uma iniciativa independente que respira a vontade de transformar vidas. 
               **Não possuímos patrocinadores fixos, ajuda governamental ou apoio constante de empresas.** 
               Cada treino que acontece na Aldeia Teko Haw só é possível graças à solidariedade de pessoas comuns que acreditam no esporte como ferramenta de inclusão.
             </p>

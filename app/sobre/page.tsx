@@ -46,7 +46,7 @@ export default function Sobre() {
                 <div className="absolute bottom-6 left-6 text-white font-bold uppercase tracking-widest text-xs">Treino Coletivo</div>
               </div>
               <div className="rounded-3xl overflow-hidden border border-white/10 shadow-2xl h-80 relative group">
-                <video src="/imagesprojeto/videoprojeto5.mp4" controls className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" poster="/logocurumin.png" preload="metadata" />
+                <video src="/imagesprojeto/videoprojeto11.mp4" controls className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" poster="/logocurumin.png" preload="metadata" />
               </div>
               <div className="rounded-3xl overflow-hidden border border-white/10 shadow-2xl h-80 relative group lg:col-span-1 md:col-span-2">
                 <img src="/imagesprojeto/projeto10.jpeg" alt="Alegria no tatame" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />

@@ -84,7 +84,7 @@ export const Testimonials: React.FC = () => {
 
           <FadeIn direction="up" delay={0.6}>
             <p className="mt-12 text-center text-zinc-400">
-              O Projeto Curumins mostra como o esporte — bem estruturado, com olhar humano e respeito à diversidade — pode ser uma ponte entre gerações, culturas, sonhos e futuro.
+              O Instituto Projeto Curumins BJJ mostra como o esporte — bem estruturado, com olhar humano e respeito à diversidade — pode ser uma ponte entre gerações, culturas, sonhos e futuro.
             </p>
           </FadeIn>
 

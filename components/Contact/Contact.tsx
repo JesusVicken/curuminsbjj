@@ -7,7 +7,15 @@ import { FadeIn } from "@/components/Animations";
 
 export const Contact: React.FC = () => {
   const [copied, setCopied] = useState(false);
+  const videoRef = React.useRef<HTMLVideoElement>(null);
 
+  React.useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.defaultMuted = true;
+      videoRef.current.muted = true;
+      videoRef.current.play().catch((e) => console.log("Autoplay prevented:", e));
+    }
+  }, []);
   const handleCopyPix = () => {
     navigator.clipboard.writeText("projetocuruminsbjj@gmail.com");
     setCopied(true);
@@ -38,20 +46,34 @@ export const Contact: React.FC = () => {
     <section id="contact" className="py-32 md:py-48 bg-zinc-950">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         
-        {/* Section Header */}
-        <div className="mx-auto max-w-4xl text-center mb-20">
+        {/* Section Header with Video Appeal */}
+        <div className="mx-auto max-w-5xl text-center mb-20">
           <FadeIn direction="up">
             <span className="text-xs font-bold tracking-widest text-red-accent uppercase">
-              Apoie Nosso Sonho
+              Faça a Diferença Hoje
             </span>
             <h2 className="mt-6 font-display text-3xl font-extrabold tracking-tight text-white sm:text-5xl leading-[0.95] uppercase">
-              Ajude nossos pequenos atletas na competição de 16 de maio
+              Sua doação mantém o instituto vivo
             </h2>
             <p className="mt-6 text-base text-zinc-400 max-w-3xl mx-auto font-light leading-relaxed">
-              Solicitamos, com muito respeito e esperança, apoio com o **transporte para a competição do dia 16 de maio**. 
-              Esse apoio será fundamental para que as crianças indígenas possam participar do evento e vivenciar essa 
-              experiência tão importante no esporte.
+              Sem patrocínios fixos ou ajuda governamental, o Instituto depende exclusivamente da solidariedade 
+              de pessoas como você para manter as aulas ativas, garantir lanches e custear inscrições em campeonatos 
+              das crianças da Aldeia Teko Haw. Qualquer ajuda importa e transforma o futuro.
             </p>
+          </FadeIn>
+
+          <FadeIn direction="up" delay={0.2}>
+            <div className="mt-12 rounded-[32px] overflow-hidden border border-white/10 shadow-2xl relative aspect-video bg-zinc-900 max-w-4xl mx-auto">
+              <video 
+                ref={videoRef}
+                src="/imagesprojeto/videoprojeto13.mp4" 
+                autoPlay 
+                loop 
+                muted 
+                playsInline
+                className="w-full h-full object-cover" 
+              />
+            </div>
           </FadeIn>
         </div>
 

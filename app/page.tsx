@@ -4,6 +4,7 @@ import React, { useEffect } from "react";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { TheProject } from "@/components/TheProject";
+import { Structure } from "@/components/Structure/Structure";
 import { Testimonials } from "@/components/Testimonials";
 import { Sponsors } from "@/components/Sponsors";
 import { Footer } from "@/components/Footer";
@@ -24,6 +25,7 @@ export default function Home() {
       <main className="flex-grow">
         <Hero />
         <TheProject />
+        <Structure />
         <Testimonials />
         <Sponsors />
       </main>

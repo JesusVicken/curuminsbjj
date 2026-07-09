@@ -110,7 +110,7 @@ export const Instructors: React.FC = () => {
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="p-5 rounded-2xl bg-zinc-900/50 border border-white/5">
-                    <h4 className="text-white font-bold text-sm mb-2">Curumins BJJ</h4>
+                    <h4 className="text-white font-bold text-sm mb-2">Instituto Projeto Curumins BJJ</h4>
                     <p className="text-xs text-zinc-400">Idealizador e precursor do projeto social para crianças indígenas na Aldeia Teko Haw.</p>
                   </div>
                   <div className="p-5 rounded-2xl bg-zinc-900/50 border border-white/5">

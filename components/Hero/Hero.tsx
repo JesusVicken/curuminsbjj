@@ -7,6 +7,16 @@ import { Preloader } from "./Preloader";
 import { gsap } from "@/lib/gsap";
 
 export const Hero: React.FC = () => {
+  const videoRef = React.useRef<HTMLVideoElement>(null);
+
+  React.useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.defaultMuted = true;
+      videoRef.current.muted = true;
+      videoRef.current.play().catch((e) => console.log("Autoplay prevented:", e));
+    }
+  }, []);
+
   const handlePreloaderComplete = () => {
 
     // GSAP Timeline to animate Hero element entrance
@@ -52,6 +62,7 @@ export const Hero: React.FC = () => {
       {/* Background Video Project */}
       <div className="absolute inset-0 z-0">
         <video 
+          ref={videoRef}
           src="/imagesprojeto/videoprojeto12.mp4" 
           autoPlay 
           loop 

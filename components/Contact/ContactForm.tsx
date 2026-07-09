@@ -31,7 +31,7 @@ export const ContactForm: React.FC = () => {
           Accept: "application/json",
         },
         body: JSON.stringify({
-          _subject: "Novo Contato - Site Curumins BJJ",
+          _subject: "Novo Contato - Site Instituto Projeto Curumins BJJ",
           Nome: formData.name,
           WhatsApp: formData.phone,
           Email: formData.email,

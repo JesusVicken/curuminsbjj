@@ -11,7 +11,7 @@ export const FAQ: React.FC = () => {
       answer: (
         <div className="flex flex-col gap-4">
           <p>
-            O Curumins BJJ não recebe apoio governamental fixo. Sua doação é 100% revertida para a compra de kimonos,
+            O Instituto Projeto Curumins BJJ não recebe apoio governamental fixo. Sua doação é 100% revertida para a compra de kimonos,
             montagem e manutenção dos tatames, alimentação pós-treino para as crianças e custeio das inscrições em campeonatos.
           </p>
           <div className="bg-white p-2 rounded-xl shadow-inner w-32 aspect-square flex justify-center items-center overflow-hidden">

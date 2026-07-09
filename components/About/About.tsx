@@ -5,6 +5,16 @@ import { AboutCard } from "./AboutCard";
 import { FadeIn } from "@/components/Animations";
 
 export const About: React.FC = () => {
+  const videoRef = React.useRef<HTMLVideoElement>(null);
+
+  React.useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.defaultMuted = true;
+      videoRef.current.muted = true;
+      videoRef.current.play().catch((e) => console.log("Autoplay prevented:", e));
+    }
+  }, []);
+
   const pillars = [
     {
       iconName: "Shield" as const,
@@ -37,6 +47,7 @@ export const About: React.FC = () => {
       {/* Background Video */}
       <div className="absolute inset-0 z-0">
         <video 
+          ref={videoRef}
           src="/imagesprojeto/videoprojeto16.mp4" 
           autoPlay 
           loop 
@@ -62,7 +73,7 @@ export const About: React.FC = () => {
                 Caminho suave para os <span className="text-red-accent">curumins</span> do DF.
               </h2>
               <p className="mt-8 text-base leading-relaxed text-zinc-400 font-light">
-                Há três anos, o **Projeto Curumins BJJ** atua como uma ferramenta ativa de inclusão social 
+                Há três anos, o **Instituto Projeto Curumins BJJ** atua como uma ferramenta ativa de inclusão social 
                 para crianças indígenas em situação de extrema vulnerabilidade que residem em Brasília, 
                 na **Aldeia Teko Haw (Tecorral)**.
               </p>
