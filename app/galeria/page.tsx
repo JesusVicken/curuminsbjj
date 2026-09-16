@@ -6,7 +6,12 @@ import { Footer } from "@/components/Footer";
 import { FadeIn } from "@/components/Animations";
 import { initLenis } from "@/lib/lenis";
 
+import { useLanguage } from "@/context/LanguageContext";
+
 export default function Galeria() {
+  const { language } = useLanguage();
+  const isEn = language === "en";
+
   useEffect(() => {
     const lenisInstance = initLenis();
     return () => {
@@ -21,7 +26,7 @@ export default function Galeria() {
   // Also include the other public images
   const extraPhotos = [
     "/image1.jpg", "/image2.jpg", "/image3.jpg", "/image4.jpg", 
-    "/image5.jpg", "/image6.jpg", "/image7.jpg", "/estrutrura.webp", "/hero.webp", "/paje.webp"
+    "/image5.jpg", "/image6.jpg", "/image7.jpg", "/estrutura.webp", "/hero.webp", "/paje.webp"
   ];
   
   const allPhotos = [...photos, ...extraPhotos];
@@ -37,14 +42,19 @@ export default function Galeria() {
           <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center relative z-10">
             <FadeIn direction="up">
               <span className="text-sm font-bold tracking-widest text-red-accent uppercase">
-                Acervo Completo
+                {isEn ? "Complete Archive" : "Acervo Completo"}
               </span>
               <h1 className="mt-6 font-display text-4xl font-extrabold tracking-tight text-white sm:text-6xl leading-[0.95] uppercase">
-                A Vida no <span className="text-red-accent">Tatame</span>
+                {isEn ? (
+                  <>Life on the <span className="text-red-accent">Mat</span></>
+                ) : (
+                  <>A Vida no <span className="text-red-accent">Tatame</span></>
+                )}
               </h1>
               <p className="mt-8 text-lg text-zinc-300 max-w-3xl mx-auto font-light leading-relaxed">
-                Aqui registramos a evolução, o sorriso e a dedicação diária das crianças da Aldeia Teko Haw. 
-                Cada foto e vídeo conta uma história de superação que você está ajudando a escrever.
+                {isEn
+                  ? "Here we record the progress, smiles, and perseverance of the children from Teko Haw Village. Every photo and video reflects a story of empowerment you are helping write."
+                  : "Aqui registramos a evolução, o sorriso e a dedicação diária das crianças da Aldeia Teko Haw. Cada foto e vídeo conta uma história de superação que você está ajudando a escrever."}
               </p>
             </FadeIn>
           </div>
@@ -55,7 +65,7 @@ export default function Galeria() {
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <FadeIn direction="up">
               <h2 className="text-2xl font-display font-bold uppercase tracking-widest text-white mb-12 flex items-center gap-4">
-                <span className="h-px w-12 bg-red-accent/50" /> Galeria de Fotos
+                <span className="h-px w-12 bg-red-accent/50" /> {isEn ? "Photo Gallery" : "Galeria de Fotos"}
               </h2>
             </FadeIn>
             <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-6 space-y-6">
@@ -81,7 +91,7 @@ export default function Galeria() {
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <FadeIn direction="up">
               <h2 className="text-2xl font-display font-bold uppercase tracking-widest text-white mb-12 flex items-center gap-4">
-                <span className="h-px w-12 bg-white/30" /> Vídeos do Projeto
+                <span className="h-px w-12 bg-white/30" /> {isEn ? "Project Videos" : "Vídeos do Projeto"}
               </h2>
             </FadeIn>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

@@ -3,16 +3,21 @@
 import React from "react";
 import { Icons } from "@/components/Icons";
 
+import { useLanguage } from "@/context/LanguageContext";
+
 export const StickyWhatsApp: React.FC = () => {
+  const { language } = useLanguage();
+  const isEn = language === "en";
+
   return (
     <a
       href="https://wa.me/5561981514085"
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 z-[100] bg-red-accent hover:bg-red-700 text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform duration-300 flex items-center justify-center shadow-[0_0_20px_rgba(200,16,46,0.5)] group"
-      aria-label="Falar com Daniel no WhatsApp"
+      className="fixed bottom-6 right-6 z-[100] bg-red-accent hover:bg-red-700 text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform duration-300 flex items-center justify-center shadow-[0_0_20px_rgba(200,16,46,0.5)] group cursor-pointer"
+      aria-label={isEn ? "Talk to Professor Daniel on WhatsApp" : "Falar com Daniel no WhatsApp"}
     >
-      <span className="sr-only">Falar no WhatsApp</span>
+      <span className="sr-only">{isEn ? "Contact via WhatsApp" : "Falar no WhatsApp"}</span>
       <svg
         className="w-8 h-8 group-hover:scale-110 transition-transform"
         fill="currentColor"

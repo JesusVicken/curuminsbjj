@@ -2,8 +2,11 @@
 
 import React from "react";
 import { FadeIn } from "@/components/Animations";
+import { useLanguage } from "@/context/LanguageContext";
 
 export const TheProject: React.FC = () => {
+  const { t } = useLanguage();
+
   return (
     <section id="project" className="relative py-32 md:py-48 bg-zinc-950 overflow-hidden">
       {/* Elegant Half-Logo Background */}
@@ -22,20 +25,16 @@ export const TheProject: React.FC = () => {
           <div className="lg:col-span-6">
             <FadeIn direction="right">
               <span className="text-xs font-bold uppercase tracking-widest text-red-accent">
-                Inclusão & Transformação
+                {t.theProject.badge}
               </span>
               <h2 className="mt-6 font-display text-4xl font-extrabold tracking-tight text-white sm:text-6xl leading-tight uppercase">
-                Jiu-jitsu como catalisador de <span className="text-red-accent">futuros</span>.
+                {t.theProject.title} <span className="text-red-accent">{t.theProject.titleHighlight}</span>.
               </h2>
               <p className="mt-8 text-lg text-zinc-300 leading-relaxed font-light">
-                O Instituto Projeto Curumins BJJ atua diretamente dentro da Aldeia Teko Haw, em Brasília, 
-                trazendo a filosofia milenar das artes marciais para crianças indígenas. Com o apoio 
-                da comunidade e de mestres como Renzo Gracie, o jiu-jitsu transforma rotinas e salva vidas.
+                {t.theProject.paragraph1}
               </p>
               <p className="mt-6 text-base text-zinc-400 leading-relaxed font-light">
-                Conforme destacado por reportagens do G1 e da Record TV, a prática reforça a autoestima, a 
-                disciplina e valoriza a rica cultura indígena. Mais do que formar atletas, o projeto cria 
-                cidadãos fortes, preparados para os desafios dentro e fora da aldeia.
+                {t.theProject.paragraph2}
               </p>
             </FadeIn>
           </div>
@@ -54,7 +53,7 @@ export const TheProject: React.FC = () => {
                     loading="lazy"
                   />
                   <div className="absolute bottom-4 left-4 right-4 bg-zinc-950/85 backdrop-blur px-4 py-2 rounded-2xl text-[9px] text-white font-bold uppercase tracking-widest border border-white/5">
-                    Conexão Comunitária
+                    {t.theProject.card1Tag}
                   </div>
                 </div>
 
@@ -67,7 +66,7 @@ export const TheProject: React.FC = () => {
                     loading="lazy"
                   />
                   <div className="absolute bottom-4 left-4 right-4 bg-zinc-950/85 backdrop-blur px-4 py-2 rounded-2xl text-[9px] text-white font-bold uppercase tracking-widest border border-white/5">
-                    União no Tatame
+                    {t.theProject.card2Tag}
                   </div>
                 </div>
 

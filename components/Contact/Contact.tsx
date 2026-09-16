@@ -5,8 +5,11 @@ import { ContactForm } from "./ContactForm";
 import { Icons } from "@/components/Icons";
 import { FadeIn } from "@/components/Animations";
 
+import { useLanguage } from "@/context/LanguageContext";
+
 export const Contact: React.FC = () => {
   const [copied, setCopied] = useState(false);
+  const { t } = useLanguage();
   const videoRef = React.useRef<HTMLVideoElement>(null);
 
   React.useEffect(() => {
@@ -16,6 +19,7 @@ export const Contact: React.FC = () => {
       videoRef.current.play().catch((e) => console.log("Autoplay prevented:", e));
     }
   }, []);
+
   const handleCopyPix = () => {
     navigator.clipboard.writeText("projetocuruminsbjj@gmail.com");
     setCopied(true);
@@ -25,20 +29,20 @@ export const Contact: React.FC = () => {
   const contactDetails = [
     {
       icon: Icons.Phone,
-      title: "WhatsApp Coordenador",
+      title: t.contact.whatsappCoordinator,
       value: "+55 (61) 98151-4085 (Daniel)",
       href: "https://wa.me/5561981514085",
     },
     {
       icon: Icons.Mail,
-      title: "E-mail Oficial",
+      title: t.contact.officialEmail,
       value: "projetocuruminsbjj@gmail.com",
       href: "mailto:projetocuruminsbjj@gmail.com",
     },
     {
       icon: Icons.MapPin,
-      title: "Aldeia Teko Haw",
-      value: "Setor Habitacional Taquari - Brasília, DF",
+      title: t.contact.villageLocation,
+      value: t.contact.villageAddress,
     },
   ];
 
@@ -50,15 +54,13 @@ export const Contact: React.FC = () => {
         <div className="mx-auto max-w-5xl text-center mb-20">
           <FadeIn direction="up">
             <span className="text-xs font-bold tracking-widest text-red-accent uppercase">
-              Faça a Diferença Hoje
+              {t.contact.badge}
             </span>
             <h2 className="mt-6 font-display text-3xl font-extrabold tracking-tight text-white sm:text-5xl leading-[0.95] uppercase">
-              Sua doação mantém o instituto vivo
+              {t.contact.title}
             </h2>
             <p className="mt-6 text-base text-zinc-400 max-w-3xl mx-auto font-light leading-relaxed">
-              Sem patrocínios fixos ou ajuda governamental, o Instituto depende exclusivamente da solidariedade 
-              de pessoas como você para manter as aulas ativas, garantir lanches e custear inscrições em campeonatos 
-              das crianças da Aldeia Teko Haw. Qualquer ajuda importa e transforma o futuro.
+              {t.contact.desc}
             </p>
           </FadeIn>
 
@@ -94,13 +96,13 @@ export const Contact: React.FC = () => {
                 </div>
                 <div className="flex-grow text-center sm:text-left">
                   <h3 className="text-[10px] font-bold text-red-accent uppercase tracking-widest">
-                    Chave Pix (E-mail)
+                    {t.contact.pixTitle}
                   </h3>
                   <p className="text-sm font-semibold text-white mt-1.5 break-all">
                     projetocuruminsbjj@gmail.com
                   </p>
                   <p className="text-[9px] text-zinc-500 uppercase font-bold tracking-wider mt-1 group-hover:text-red-accent transition-colors">
-                    {copied ? "Copiado com sucesso!" : "Clique para copiar a chave Pix"}
+                    {copied ? t.contact.copied : t.contact.clickToCopy}
                   </p>
                 </div>
               </div>

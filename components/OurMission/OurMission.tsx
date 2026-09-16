@@ -2,8 +2,11 @@
 
 import React from "react";
 import { FadeIn } from "@/components/Animations";
+import { useLanguage } from "@/context/LanguageContext";
 
 export const OurMission: React.FC = () => {
+  const { language } = useLanguage();
+  const isEn = language === "en";
   const videoRef = React.useRef<HTMLVideoElement>(null);
 
   React.useEffect(() => {
@@ -28,6 +31,8 @@ export const OurMission: React.FC = () => {
           className="w-full h-full object-cover opacity-40" 
         />
       </div>
+      {/* Gradient fading masks for scroll effect */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-b from-zinc-950 via-transparent to-zinc-950" />
       <div className="absolute inset-0 z-0 bg-zinc-950/80" />
 
       {/* Decorative Radial Lighting */}
@@ -35,16 +40,25 @@ export const OurMission: React.FC = () => {
 
       <div className="relative z-10 mx-auto max-w-5xl px-6 lg:px-8 text-center">
         <FadeIn direction="up">
-          <span className="text-xs font-bold uppercase tracking-widest text-gold-accent">
-            Nosso Compromisso
+          <span className="text-xs font-bold uppercase tracking-widest text-red-accent">
+            {isEn ? "Our Commitment" : "Nosso Compromisso"}
           </span>
         </FadeIn>
 
         <FadeIn direction="up" delay={0.2}>
           <blockquote className="mt-8 font-display text-2xl md:text-5xl font-bold tracking-tight text-white leading-normal md:leading-relaxed">
-            &ldquo;Utilizar o jiu-jitsu como ferramenta de
-            <span className="text-red-accent"> inclusão social</span>, transmitindo os valores da arte marcial para 
-            contribuir no desenvolvimento diário e na formação pessoal de crianças indígenas.&rdquo;
+            {isEn ? (
+              <>
+                &ldquo;Using Brazilian Jiu-Jitsu as an active tool for
+                <span className="text-red-accent"> social inclusion</span>, imparting martial arts values to enrich the daily growth and character of indigenous children.&rdquo;
+              </>
+            ) : (
+              <>
+                &ldquo;Utilizar o jiu-jitsu como ferramenta de
+                <span className="text-red-accent"> inclusão social</span>, transmitindo os valores da arte marcial para 
+                contribuir no desenvolvimento diário e na formação pessoal de crianças indígenas.&rdquo;
+              </>
+            )}
           </blockquote>
         </FadeIn>
 
@@ -52,7 +66,7 @@ export const OurMission: React.FC = () => {
           <div className="mt-10 flex items-center justify-center gap-4">
             <span className="h-px w-8 bg-red-accent/40" />
             <p className="text-sm font-sans font-semibold uppercase tracking-widest text-red-accent">
-              Metodologia Instituto Projeto Curumins BJJ
+              {isEn ? "Instituto Projeto Curumins BJJ Methodology" : "Metodologia Instituto Projeto Curumins BJJ"}
             </p>
             <span className="h-px w-8 bg-red-accent/40" />
           </div>

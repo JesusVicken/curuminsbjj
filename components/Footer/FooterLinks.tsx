@@ -1,30 +1,36 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
+import { useLanguage } from "@/context/LanguageContext";
 
 export const FooterLinks: React.FC = () => {
+  const { language } = useLanguage();
+  const isEn = language === "en";
+
   const columns = [
     {
-      title: "Institucional",
+      title: isEn ? "Institutional" : "Institucional",
       links: [
-        { label: "Início", href: "#" },
-        { label: "Sobre Nós", href: "#about" },
-        { label: "Fale Conosco", href: "#contact" },
+        { label: isEn ? "Home" : "Início", href: "/" },
+        { label: isEn ? "About Us" : "Sobre Nós", href: "/sobre" },
+        { label: isEn ? "Contact Us" : "Fale Conosco", href: "/apoie" },
       ],
     },
     {
-      title: "Conteúdo",
+      title: isEn ? "Content" : "Conteúdo",
       links: [
-        { label: "Imprensa", href: "#press" },
-        { label: "Galeria de Aulas", href: "#gallery" },
-        { label: "Nossos Senseis", href: "#instructors" },
+        { label: isEn ? "Press & Media" : "Imprensa", href: "/imprensa-faq" },
+        { label: isEn ? "Training Gallery" : "Galeria de Aulas", href: "/galeria" },
+        { label: isEn ? "Instructors" : "Nossos Senseis", href: "/sobre#instructors" },
       ],
     },
     {
-      title: "Suporte",
+      title: isEn ? "Support" : "Suporte",
       links: [
-        { label: "Dúvidas (FAQ)", href: "#faq" },
-        { label: "Como Apoiar", href: "#contact" },
-        { label: "Apoio Corporativo", href: "#sponsors" },
+        { label: isEn ? "Questions (FAQ)" : "Dúvidas (FAQ)", href: "/imprensa-faq#faq" },
+        { label: isEn ? "How to Support" : "Como Apoiar", href: "/apoie" },
+        { label: isEn ? "Sponsors & Donors" : "Apoio Corporativo", href: "/#sponsors" },
       ],
     },
   ];

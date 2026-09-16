@@ -5,8 +5,11 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/UI/Card";
 import { FadeIn } from "@/components/Animations";
 import { Icons } from "@/components/Icons";
 
+import { useLanguage } from "@/context/LanguageContext";
+
 export const Press: React.FC = () => {
   const [filter, setFilter] = useState<"all" | "video" | "news" | "social">("all");
+  const { t } = useLanguage();
   const videoRef = React.useRef<HTMLVideoElement>(null);
 
   React.useEffect(() => {
@@ -88,6 +91,13 @@ export const Press: React.FC = () => {
     (art) => filter === "all" || art.type === filter
   );
 
+  const filterLabels: Record<string, string> = {
+    all: t.press.filterAll,
+    video: t.press.filterVideo,
+    news: t.press.filterNews,
+    social: t.press.filterSocial,
+  };
+
   return (
     <section id="press" className="py-32 bg-zinc-950 relative overflow-hidden border-t border-white/5">
       {/* Background Video */}
@@ -99,11 +109,11 @@ export const Press: React.FC = () => {
           loop 
           muted 
           playsInline
-          className="w-full h-full object-cover opacity-20" 
+          className="w-full h-full object-cover opacity-50" 
         />
       </div>
-      <div className="absolute inset-0 z-0 bg-gradient-to-b from-zinc-950 via-transparent to-zinc-950" />
-      <div className="absolute inset-0 z-0 bg-zinc-950/80" />
+      <div className="absolute inset-0 z-0 bg-gradient-to-b from-zinc-950 via-zinc-950/40 to-zinc-950" />
+      <div className="absolute inset-0 z-0 bg-zinc-950/40" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
         
@@ -111,14 +121,13 @@ export const Press: React.FC = () => {
         <div className="mx-auto max-w-3xl text-center mb-16">
           <FadeIn direction="up">
             <span className="text-xs font-bold tracking-widest text-red-accent uppercase">
-              Imprensa & Mídia
+              {t.press.badge}
             </span>
-            <h2 className="mt-6 font-display text-3xl font-extrabold tracking-tight text-white sm:text-5xl leading-[0.95] uppercase">
-              O Instituto na Mídia Nacional
+            <h2 className="mt-6 font-display text-3xl font-extrabold tracking-tight text-white sm:text-5xl leading-[1.1] uppercase">
+              {t.press.titlePart1} <br/>{t.press.titlePart2}
             </h2>
             <p className="mt-4 text-base text-zinc-400 max-w-2xl mx-auto font-light">
-              Assista a reportagens de TV e leia notícias escritas sobre o impacto real das aulas de
-              jiu-jitsu na Aldeia Teko Haw em Brasília.
+              {t.press.desc}
             </p>
           </FadeIn>
         </div>
@@ -135,7 +144,7 @@ export const Press: React.FC = () => {
                   : "border-white/10 bg-transparent text-zinc-400 hover:text-white hover:border-zinc-700"
               }`}
             >
-              {type === "all" ? "Todos" : type === "video" ? "TV / Vídeos" : type === "news" ? "Matérias" : "Redes Sociais"}
+              {filterLabels[type]}
             </button>
           ))}
         </div>

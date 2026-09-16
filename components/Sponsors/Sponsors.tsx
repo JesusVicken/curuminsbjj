@@ -3,9 +3,11 @@
 import React, { useState } from "react";
 import { FadeIn } from "@/components/Animations";
 import { Icons } from "@/components/Icons";
+import { useLanguage } from "@/context/LanguageContext";
 
 export const Sponsors: React.FC = () => {
   const [copied, setCopied] = useState(false);
+  const { t } = useLanguage();
 
   const handleCopyPix = () => {
     navigator.clipboard.writeText("projetocuruminsbjj@gmail.com");
@@ -30,14 +32,13 @@ export const Sponsors: React.FC = () => {
       <div className="relative z-10 mx-auto max-w-5xl px-6 lg:px-8 text-center">
         <FadeIn direction="up">
           <span className="text-xs font-bold tracking-widest text-red-accent uppercase">
-            Apoie Financeiramente
+            {t.sponsors.badge}
           </span>
           <h2 className="mt-4 font-display text-3xl font-extrabold tracking-tight text-white sm:text-5xl uppercase leading-none">
-            Mantenha o Tatame Vivo
+            {t.sponsors.title}
           </h2>
           <p className="mt-4 text-sm text-zinc-400 max-w-xl mx-auto font-light leading-relaxed">
-            Como um projeto social 100% voluntário e sem patrocinadores fixos, contamos com sua solidariedade 
-            para custear kimonos, materiais e despesas gerais de manutenção das aulas na Aldeia.
+            {t.sponsors.desc}
           </p>
         </FadeIn>
 
@@ -50,19 +51,19 @@ export const Sponsors: React.FC = () => {
             >
               {/* QR Code Image */}
               <div className="bg-white p-2 rounded-2xl shadow-inner w-32 aspect-square flex justify-center items-center overflow-hidden flex-shrink-0">
-                <img src="/qrcode.jpg" alt="QR Code PIX" className="w-full h-full object-contain" />
+                <img src="/qrcode.jpg" alt={t.sponsors.qrAlt} className="w-full h-full object-contain" />
               </div>
               
               {/* Text and Copy Info */}
               <div className="text-center sm:text-left flex-grow">
                 <p className="text-[10px] font-bold text-red-accent uppercase tracking-widest leading-none">
-                  Chave Pix (E-mail do Projeto)
+                  {t.sponsors.pixTitle}
                 </p>
                 <p className="text-base font-bold text-white mt-2 tracking-wide break-all font-mono">
                   projetocuruminsbjj@gmail.com
                 </p>
                 <p className="text-[9px] text-zinc-500 uppercase font-bold tracking-wider mt-2 group-hover:text-red-accent transition-colors">
-                  {copied ? "Copiado com sucesso!" : "Clique para copiar a chave Pix"}
+                  {copied ? t.sponsors.pixCopied : t.sponsors.pixCopy}
                 </p>
               </div>
             </div>

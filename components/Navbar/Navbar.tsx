@@ -8,9 +8,12 @@ import { Button } from "@/components/UI/Button";
 import { useLockBodyScroll } from "@/hooks/useLockBodyScroll";
 import { cn } from "@/utils/cn";
 
+import { useLanguage } from "@/context/LanguageContext";
+
 export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
 
   useLockBodyScroll(isOpen);
 
@@ -23,11 +26,11 @@ export const Navbar: React.FC = () => {
   }, []);
 
   const navLinks = [
-    { href: "/", label: "Início" },
-    { href: "/sobre", label: "Sobre o Projeto" },
-    { href: "/galeria", label: "Galeria" },
-    { href: "/imprensa-faq", label: "Imprensa & FAQ" },
-    { href: "/apoie", label: "Contato" },
+    { href: "/", label: t.navbar.home },
+    { href: "/sobre", label: t.navbar.about },
+    { href: "/galeria", label: t.navbar.gallery },
+    { href: "/imprensa-faq", label: t.navbar.press },
+    { href: "/apoie", label: t.navbar.contact },
   ];
 
   return (
@@ -44,7 +47,7 @@ export const Navbar: React.FC = () => {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="#" className="flex items-center gap-3 font-display text-lg font-black tracking-widest text-white uppercase group">
+          <Link href="/" className="flex items-center gap-3 font-display text-lg font-black tracking-widest text-white uppercase group">
             <img
               src="/logocurumin.png"
               alt="Logo Instituto Projeto Curumins BJJ"
@@ -60,23 +63,84 @@ export const Navbar: React.FC = () => {
             ))}
           </nav>
 
-          {/* Action Button */}
-          <div className="hidden md:block">
+          {/* Action & Language Toggle */}
+          <div className="hidden md:flex items-center gap-4">
+            {/* Language Switcher */}
+            <div className="flex items-center bg-zinc-900/90 border border-white/10 rounded-full p-1 text-[11px] shadow-inner">
+              <button
+                type="button"
+                onClick={() => setLanguage("pt")}
+                className={cn(
+                  "px-2.5 py-1 rounded-full font-bold uppercase transition-all cursor-pointer",
+                  language === "pt"
+                    ? "bg-red-accent text-white shadow-[0_0_12px_rgba(200,16,46,0.6)]"
+                    : "text-zinc-400 hover:text-white"
+                )}
+                aria-label="Português"
+              >
+                PT
+              </button>
+              <button
+                type="button"
+                onClick={() => setLanguage("en")}
+                className={cn(
+                  "px-2.5 py-1 rounded-full font-bold uppercase transition-all cursor-pointer",
+                  language === "en"
+                    ? "bg-red-accent text-white shadow-[0_0_12px_rgba(200,16,46,0.6)]"
+                    : "text-zinc-400 hover:text-white"
+                )}
+                aria-label="English"
+              >
+                EN
+              </button>
+            </div>
+
             <Link href="/apoie">
               <Button variant="gold" size="sm">
-                Apoiar Projeto
+                {t.navbar.supportBtn}
               </Button>
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-full hover:bg-white/5 text-zinc-400 hover:text-white cursor-pointer"
-            aria-label="Toggle menu"
-          >
-            {isOpen ? <Icons.X className="h-6 w-6" /> : <Icons.Menu className="h-6 w-6" />}
-          </button>
+          {/* Mobile Right Controls: Language switcher + Hamburger */}
+          <div className="flex md:hidden items-center gap-3">
+            {/* Quick Mobile Language Switcher */}
+            <div className="flex items-center bg-zinc-900 border border-white/10 rounded-full p-0.5 text-[10px]">
+              <button
+                type="button"
+                onClick={() => setLanguage("pt")}
+                className={cn(
+                  "px-2 py-0.5 rounded-full font-bold uppercase transition-all cursor-pointer",
+                  language === "pt"
+                    ? "bg-red-accent text-white"
+                    : "text-zinc-400 hover:text-white"
+                )}
+              >
+                PT
+              </button>
+              <button
+                type="button"
+                onClick={() => setLanguage("en")}
+                className={cn(
+                  "px-2 py-0.5 rounded-full font-bold uppercase transition-all cursor-pointer",
+                  language === "en"
+                    ? "bg-red-accent text-white"
+                    : "text-zinc-400 hover:text-white"
+                )}
+              >
+                EN
+              </button>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="p-2 rounded-full hover:bg-white/5 text-zinc-400 hover:text-white cursor-pointer"
+              aria-label="Toggle menu"
+            >
+              {isOpen ? <Icons.X className="h-6 w-6" /> : <Icons.Menu className="h-6 w-6" />}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -93,10 +157,11 @@ export const Navbar: React.FC = () => {
               />
             ))}
           </nav>
-          <div className="mt-auto pb-10">
+
+          <div className="mt-auto flex flex-col gap-4 pb-10">
             <Link href="/apoie" onClick={() => setIsOpen(false)}>
               <Button variant="gold" size="lg" className="w-full">
-                Apoiar Projeto
+                {t.navbar.supportBtn}
               </Button>
             </Link>
           </div>

@@ -18,6 +18,8 @@ export const Hero: React.FC = () => {
   }, []);
 
   const handlePreloaderComplete = () => {
+    // Set initial masked position for chars
+    gsap.set(".hero-text-char", { y: "100%" });
 
     // GSAP Timeline to animate Hero element entrance
     const tl = gsap.timeline();
@@ -40,12 +42,18 @@ export const Hero: React.FC = () => {
       duration: 1,
       ease: "power3.out",
     }, "-=0.9")
+    .to(".hero-appeal", {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      ease: "power3.out",
+    }, "-=0.85")
     .to(".hero-actions", {
       opacity: 1,
       y: 0,
       duration: 1,
       ease: "power3.out",
-    }, "-=0.9")
+    }, "-=0.8")
     .to(".hero-scroll-indicator", {
       opacity: 1,
       y: 0,

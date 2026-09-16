@@ -4,7 +4,12 @@ import React from "react";
 import { FadeIn } from "@/components/Animations";
 import { Icons } from "@/components/Icons";
 
+import { useLanguage } from "@/context/LanguageContext";
+
 export const Instructors: React.FC = () => {
+  const { language } = useLanguage();
+  const isEn = language === "en";
+
   return (
     <section id="idealizador" className="py-32 md:py-48 bg-zinc-950 relative overflow-hidden border-t border-white/5">
       {/* Glow effect and Parallax Background */}
@@ -20,15 +25,16 @@ export const Instructors: React.FC = () => {
         {/* Section Header */}
         <div className="mb-20">
           <FadeIn direction="up">
-            <span className="text-sm font-bold tracking-widest text-gold-accent uppercase">
-              O Idealizador
+            <span className="text-sm font-bold tracking-widest text-red-accent uppercase">
+              {isEn ? "The Founder & Head Coach" : "O Idealizador"}
             </span>
             <h2 className="mt-4 font-display text-4xl font-extrabold tracking-tight text-white sm:text-6xl leading-[0.95] uppercase">
               Daniel <span className="text-red-accent">Badke Lino</span>
             </h2>
             <p className="mt-6 text-base text-zinc-400 max-w-2xl font-light leading-relaxed">
-              Faixa Preta 1º Grau • Especialista em Jiu-Jitsu Infantil • Profissional de Educação Física (CREF/DF 5646). 
-              Uma trajetória de mais de 20 anos no esporte, dedicada à inclusão social e ao ensino humanizado.
+              {isEn
+                ? "1st Degree BJJ Black Belt • Youth Martial Arts Specialist • Physical Education Degree (CREF/DF 5646). Over 20 years dedicated to martial arts, social inclusion, and community coaching."
+                : "Faixa Preta 1º Grau • Especialista em Jiu-Jitsu Infantil • Profissional de Educação Física (CREF/DF 5646). Uma trajetória de mais de 20 anos no esporte, dedicada à inclusão social e ao ensino humanizado."}
             </p>
           </FadeIn>
         </div>
@@ -48,13 +54,13 @@ export const Instructors: React.FC = () => {
                 
                 <div className="absolute bottom-0 left-0 right-0 p-8">
                   <div className="flex gap-4">
-                    <a href="https://instagram.com/danielbadkelino" target="_blank" rel="noreferrer" className="h-12 w-12 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white hover:bg-gold-accent hover:text-zinc-950 transition-colors border border-white/20">
+                    <a href="https://instagram.com/danielbadkelino" target="_blank" rel="noreferrer" className="h-12 w-12 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white hover:bg-red-accent hover:text-white transition-colors border border-white/20">
                       <Icons.Instagram className="h-5 w-5" />
                     </a>
-                    <a href="mailto:daniellino4311@gmail.com" className="h-12 w-12 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white hover:bg-gold-accent hover:text-zinc-950 transition-colors border border-white/20">
+                    <a href="mailto:daniellino4311@gmail.com" className="h-12 w-12 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white hover:bg-red-accent hover:text-white transition-colors border border-white/20">
                       <Icons.Mail className="h-5 w-5" />
                     </a>
-                    <a href="https://wa.me/5561981514085" target="_blank" rel="noreferrer" className="h-12 w-12 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white hover:bg-gold-accent hover:text-zinc-950 transition-colors border border-white/20">
+                    <a href="https://wa.me/5561981514085" target="_blank" rel="noreferrer" className="h-12 w-12 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white hover:bg-red-accent hover:text-white transition-colors border border-white/20">
                       <Icons.Phone className="h-5 w-5" />
                     </a>
                   </div>
@@ -70,7 +76,7 @@ export const Instructors: React.FC = () => {
             <FadeIn direction="up" delay={0.1}>
               <div className="space-y-6">
                 <h3 className="text-xl font-display font-bold text-white uppercase tracking-wide border-b border-white/10 pb-4 flex items-center gap-3">
-                  <Icons.Instagram className="h-6 w-6 text-red-accent" /> Redes Sociais
+                  <Icons.Instagram className="h-6 w-6 text-red-accent" /> {isEn ? "Social Media" : "Redes Sociais"}
                 </h3>
                 <div className="flex flex-col gap-3">
                   <a href="https://instagram.com/danielbadkelino" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-zinc-300 font-medium hover:text-white transition-colors w-fit">
@@ -90,14 +96,14 @@ export const Instructors: React.FC = () => {
             <FadeIn direction="up" delay={0.2}>
               <div className="space-y-6">
                 <h3 className="text-xl font-display font-bold text-white uppercase tracking-wide border-b border-white/10 pb-4 flex items-center gap-3">
-                  <Icons.Award className="h-6 w-6 text-gold-accent" /> Acadêmico & Cursos
+                  <Icons.Award className="h-6 w-6 text-red-accent" /> {isEn ? "Academic & Credentials" : "Acadêmico & Cursos"}
                 </h3>
                 <ul className="space-y-4 text-zinc-400 font-light text-sm">
-                  <li className="flex gap-3"><span className="text-gold-accent mt-0.5">✦</span> Formado em Educação Física (2006) - Faculdade Alvorada</li>
-                  <li className="flex gap-3"><span className="text-gold-accent mt-0.5">✦</span> Pós-Graduado na Austrália (2009) - TAFE, Fluente em Inglês</li>
-                  <li className="flex gap-3"><span className="text-gold-accent mt-0.5">✦</span> Curso de Metodologia de Jiu-Jitsu Infantil de Ensino (2022)</li>
-                  <li className="flex gap-3"><span className="text-gold-accent mt-0.5">✦</span> Capacitação de Instrutores Gracie Barra (2021-2024)</li>
-                  <li className="flex gap-3"><span className="text-gold-accent mt-0.5">✦</span> Curso de Defesa Pessoal & Primeiros Socorros no Tatame (2023)</li>
+                  <li className="flex gap-3"><span className="text-red-accent mt-0.5">✦</span> {isEn ? "B.S. in Physical Education (2006) - Faculdade Alvorada" : "Formado em Educação Física (2006) - Faculdade Alvorada"}</li>
+                  <li className="flex gap-3"><span className="text-red-accent mt-0.5">✦</span> {isEn ? "Post-Graduate Studies in Australia (2009) - TAFE, Fluent in English" : "Pós-Graduado na Austrália (2009) - TAFE, Fluente em Inglês"}</li>
+                  <li className="flex gap-3"><span className="text-red-accent mt-0.5">✦</span> {isEn ? "Youth BJJ Teaching Methodology Certification (2022)" : "Curso de Metodologia de Jiu-Jitsu Infantil de Ensino (2022)"}</li>
+                  <li className="flex gap-3"><span className="text-red-accent mt-0.5">✦</span> {isEn ? "Gracie Barra Certified Instructor (2021-2024)" : "Capacitação de Instrutores Gracie Barra (2021-2024)"}</li>
+                  <li className="flex gap-3"><span className="text-red-accent mt-0.5">✦</span> {isEn ? "Self-Defense & Emergency First Aid on the Mat (2023)" : "Curso de Defesa Pessoal & Primeiros Socorros no Tatame (2023)"}</li>
                 </ul>
               </div>
             </FadeIn>
@@ -106,24 +112,34 @@ export const Instructors: React.FC = () => {
             <FadeIn direction="up" delay={0.3}>
               <div className="space-y-6">
                 <h3 className="text-xl font-display font-bold text-white uppercase tracking-wide border-b border-white/10 pb-4 flex items-center gap-3">
-                  <Icons.Heart className="h-6 w-6 text-red-accent" /> Projetos & Impacto Social
+                  <Icons.Heart className="h-6 w-6 text-red-accent" /> {isEn ? "Projects & Social Impact" : "Projetos & Impacto Social"}
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="p-5 rounded-2xl bg-zinc-900/50 border border-white/5">
                     <h4 className="text-white font-bold text-sm mb-2">Instituto Projeto Curumins BJJ</h4>
-                    <p className="text-xs text-zinc-400">Idealizador e precursor do projeto social para crianças indígenas na Aldeia Teko Haw.</p>
+                    <p className="text-xs text-zinc-400">
+                      {isEn ? "Founder and coordinator of the martial arts program for indigenous children in Teko Haw Village." : "Idealizador e precursor do projeto social para crianças indígenas na Aldeia Teko Haw."}
+                    </p>
                   </div>
                   <div className="p-5 rounded-2xl bg-zinc-900/50 border border-white/5">
                     <h4 className="text-white font-bold text-sm mb-2">Raia Norte Esportes</h4>
-                    <p className="text-xs text-zinc-400">Precursor do projeto de esportes aquáticos e líder do Natal Solidário (10+ anos).</p>
+                    <p className="text-xs text-zinc-400">
+                      {isEn ? "Pioneer of water sports and coordinator of annual Christmas solidarity campaigns (10+ years)." : "Precursor do projeto de esportes aquáticos e líder do Natal Solidário (10+ anos)."}
+                    </p>
                   </div>
                   <div className="p-5 rounded-2xl bg-zinc-900/50 border border-white/5">
                     <h4 className="text-white font-bold text-sm mb-2">Superação SUP</h4>
-                    <p className="text-xs text-zinc-400">Precursor do projeto Stand Up Paddle focado em cadeirantes e inclusão.</p>
+                    <p className="text-xs text-zinc-400">
+                      {isEn ? "Pioneer in Stand Up Paddle adapted for wheelchair users and athletes with disabilities." : "Precursor do projeto Stand Up Paddle focado em cadeirantes e inclusão."}
+                    </p>
                   </div>
                   <div className="p-5 rounded-2xl bg-zinc-900/50 border border-white/5">
-                    <h4 className="text-white font-bold text-sm mb-2">Tocha Olímpica</h4>
-                    <p className="text-xs text-zinc-400">Condutor oficial da Tocha Olímpica (2016) em reconhecimento ao seu impacto no esporte.</p>
+                    <h4 className="text-white font-bold text-sm mb-2">
+                      {isEn ? "Olympic Torchbearer" : "Tocha Olímpica"}
+                    </h4>
+                    <p className="text-xs text-zinc-400">
+                      {isEn ? "Official Rio 2016 Olympic Torchbearer in recognition of lifelong grassroots sports impact." : "Condutor oficial da Tocha Olímpica (2016) em reconhecimento ao seu impacto no esporte."}
+                    </p>
                   </div>
                 </div>
               </div>
